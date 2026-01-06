@@ -25,10 +25,10 @@ var textHeight, maxHeight
 
 
 function preload(){
-     art_import = loadJSON("../0_data/oeuvres-mac.json")
-     artists_import = loadJSON("../0_data/artistes-mac.json")
-     artists_origines_import = loadJSON("../0_data/index_origines_artistes.json")
-     origines_import = loadJSON("../0_data/index_origines.json")
+     art_import = loadJSON("../data/oeuvres-mac.json")
+     artists_import = loadJSON("../data/artistes-mac.json")
+     artists_origines_import = loadJSON("../data/index_origines_artistes.json")
+     origines_import = loadJSON("../data/index_origines.json")
 }
 
 function colorButton() {
