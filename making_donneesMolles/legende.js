@@ -26,7 +26,7 @@ var specYear, index_tm
 
 function preload(){
 
-     origines_import = loadJSON("../0_data/index_origines_tm.json")
+     origines_import = loadJSON("../data/index_origines_tm.json")
 }
 
 function setup(){
