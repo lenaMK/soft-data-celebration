@@ -1,0 +1,1594 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width initial-scale=1'>
+
+	<title>Audiodescription | Célébration de données molles</title>
+	<meta name="description" content="audiodescription de la célébration de données molles">
+	<meta name="author" content="Lena MK">
+	<style type='text/css'>
+		html {
+			overflow-x: initial !important;
+		}
+
+		:root {
+			--bg-color: #ffffff;
+			--text-color: #333333;
+			--select-text-bg-color: #B5D6FC;
+			--select-text-font-color: auto;
+			--monospace: "Lucida Console", Consolas, "Courier", monospace;
+			--title-bar-height: 20px;
+		}
+
+		.mac-os-11 {
+			--title-bar-height: 28px;
+		}
+
+		html {
+			font-size: 14px;
+			background-color: var(--bg-color);
+			color: var(--text-color);
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5 {
+			white-space: pre-wrap;
+		}
+
+		body {
+			margin: 0px;
+			padding: 0px;
+			height: auto;
+			inset: 0px;
+			font-size: 1rem;
+			line-height: 1.42857;
+			overflow-x: hidden;
+			background: inherit;
+		}
+
+		iframe {
+			margin: auto;
+		}
+
+		a.url {
+			word-break: break-all;
+		}
+
+		a:active,
+		a:hover {
+			outline: 0px;
+		}
+
+		.in-text-selection,
+		::selection {
+			text-shadow: none;
+			background: var(--select-text-bg-color);
+			color: var(--select-text-font-color);
+		}
+
+		#write {
+			margin: 0px auto;
+			height: auto;
+			width: inherit;
+			word-break: normal;
+			overflow-wrap: break-word;
+			position: relative;
+			white-space: normal;
+			overflow-x: visible;
+			padding-top: 36px;
+		}
+
+		#write.first-line-indent p {
+			text-indent: 2em;
+		}
+
+		#write.first-line-indent li p,
+		#write.first-line-indent p * {
+			text-indent: 0px;
+		}
+
+		#write.first-line-indent li {
+			margin-left: 2em;
+		}
+
+		.for-image #write {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		body.typora-export {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		.typora-export .footnote-line,
+		.typora-export li,
+		.typora-export p {
+			white-space: pre-wrap;
+		}
+
+		.typora-export .task-list-item input {
+			pointer-events: none;
+		}
+
+		@media screen and (max-width: 500px) {
+			body.typora-export {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+
+			#write {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+
+		#write li>figure:last-child {
+			margin-bottom: 0.5rem;
+		}
+
+		#write ol,
+		#write ul {
+			position: relative;
+		}
+
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+			image-orientation: from-image;
+		}
+
+		button,
+		input,
+		select,
+		textarea {
+			color: inherit;
+			font: inherit;
+		}
+
+		input[type="checkbox"],
+		input[type="radio"] {
+			line-height: normal;
+			padding: 0px;
+		}
+
+		*,
+		::after,
+		::before {
+			box-sizing: border-box;
+		}
+
+		#write h1,
+		#write h2,
+		#write h3,
+		#write h4,
+		#write h5,
+		#write h6,
+		#write p,
+		#write pre {
+			width: inherit;
+		}
+
+		#write h1,
+		#write h2,
+		#write h3,
+		#write h4,
+		#write h5,
+		#write h6,
+		#write p {
+			position: relative;
+		}
+
+		p {
+			line-height: inherit;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			break-after: avoid-page;
+			break-inside: avoid;
+			orphans: 4;
+		}
+
+		p {
+			orphans: 4;
+		}
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.8rem;
+		}
+
+		h3 {
+			font-size: 1.6rem;
+		}
+
+		h4 {
+			font-size: 1.4rem;
+		}
+
+		h5 {
+			font-size: 1.2rem;
+		}
+
+		h6 {
+			font-size: 1rem;
+		}
+
+		.md-math-block,
+		.md-rawblock,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.md-blockmeta {
+			color: rgb(204, 204, 204);
+			font-weight: 700;
+			font-style: italic;
+		}
+
+		a {
+			cursor: pointer;
+		}
+
+		sup.md-footnote {
+			padding: 2px 4px;
+			background-color: rgba(238, 238, 238, 0.7);
+			color: rgb(85, 85, 85);
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		sup.md-footnote a,
+		sup.md-footnote a:hover {
+			color: inherit;
+			text-transform: inherit;
+			text-decoration: inherit;
+		}
+
+		#write input[type="checkbox"] {
+			cursor: pointer;
+			width: inherit;
+			height: inherit;
+		}
+
+		figure {
+			overflow-x: auto;
+			margin: 1.2em 0px;
+			max-width: calc(100% + 16px);
+			padding: 0px;
+		}
+
+		figure>table {
+			margin: 0px;
+		}
+
+		thead,
+		tr {
+			break-inside: avoid;
+			break-after: auto;
+		}
+
+		thead {
+			display: table-header-group;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0px;
+			width: 100%;
+			overflow: auto;
+			break-inside: auto;
+			text-align: left;
+		}
+
+		table.md-table td {
+			min-width: 32px;
+		}
+
+		.CodeMirror-gutters {
+			border-right: 0px;
+			background-color: inherit;
+		}
+
+		.CodeMirror-linenumber {
+			user-select: none;
+		}
+
+		.CodeMirror {
+			text-align: left;
+		}
+
+		.CodeMirror-placeholder {
+			opacity: 0.3;
+		}
+
+		.CodeMirror pre {
+			padding: 0px 4px;
+		}
+
+		.CodeMirror-lines {
+			padding: 0px;
+		}
+
+		div.hr:focus {
+			cursor: none;
+		}
+
+		#write pre {
+			white-space: pre-wrap;
+		}
+
+		#write.fences-no-line-wrapping pre {
+			white-space: pre;
+		}
+
+		#write pre.ty-contain-cm {
+			white-space: normal;
+		}
+
+		.CodeMirror-gutters {
+			margin-right: 4px;
+		}
+
+		.md-fences {
+			font-size: 0.9rem;
+			display: block;
+			break-inside: avoid;
+			text-align: left;
+			overflow: visible;
+			white-space: pre;
+			background: inherit;
+			position: relative !important;
+		}
+
+		.md-fences-adv-panel {
+			width: 100%;
+			margin-top: 10px;
+			text-align: center;
+			padding-top: 0px;
+			padding-bottom: 8px;
+			overflow-x: auto;
+		}
+
+		#write .md-fences.mock-cm {
+			white-space: pre-wrap;
+		}
+
+		.md-fences.md-fences-with-lineno {
+			padding-left: 0px;
+		}
+
+		#write.fences-no-line-wrapping .md-fences.mock-cm {
+			white-space: pre;
+			overflow-x: auto;
+		}
+
+		.md-fences.mock-cm.md-fences-with-lineno {
+			padding-left: 8px;
+		}
+
+		.CodeMirror-line,
+		twitterwidget {
+			break-inside: avoid;
+		}
+
+		svg {
+			break-inside: avoid;
+		}
+
+		.footnotes {
+			opacity: 0.8;
+			font-size: 0.9rem;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+
+		.footnotes+.footnotes {
+			margin-top: 0px;
+		}
+
+		.md-reset {
+			margin: 0px;
+			padding: 0px;
+			border: 0px;
+			outline: 0px;
+			vertical-align: top;
+			background: 0px 0px;
+			text-decoration: none;
+			text-shadow: none;
+			float: none;
+			position: static;
+			width: auto;
+			height: auto;
+			white-space: nowrap;
+			cursor: inherit;
+			-webkit-tap-highlight-color: transparent;
+			line-height: normal;
+			font-weight: 400;
+			text-align: left;
+			box-sizing: content-box;
+			direction: ltr;
+		}
+
+		li div {
+			padding-top: 0px;
+		}
+
+		blockquote {
+			margin: 1rem 0px;
+		}
+
+		li .mathjax-block,
+		li p {
+			margin: 0.5rem 0px;
+		}
+
+		li blockquote {
+			margin: 1rem 0px;
+		}
+
+		li {
+			margin: 0px;
+			position: relative;
+		}
+
+		blockquote> :last-child {
+			margin-bottom: 0px;
+		}
+
+		blockquote> :first-child,
+		li> :first-child {
+			margin-top: 0px;
+		}
+
+		.footnotes-area {
+			color: rgb(136, 136, 136);
+			margin-top: 0.714rem;
+			padding-bottom: 0.143rem;
+			white-space: normal;
+		}
+
+		#write .footnote-line {
+			white-space: pre-wrap;
+		}
+
+		@media print {
+
+			body,
+			html {
+				border: 1px solid transparent;
+				height: 99%;
+				break-after: avoid;
+				break-before: avoid;
+				font-variant-ligatures: no-common-ligatures;
+			}
+
+			#write {
+				margin-top: 0px;
+				border-color: transparent !important;
+				padding-top: 0px !important;
+				padding-bottom: 0px !important;
+			}
+
+			.typora-export * {
+				-webkit-print-color-adjust: exact;
+			}
+
+			.typora-export #write {
+				break-after: avoid;
+			}
+
+			.typora-export #write::after {
+				height: 0px;
+			}
+
+			.is-mac table {
+				break-inside: avoid;
+			}
+
+			#write>p:nth-child(1) {
+				margin-top: 0px;
+			}
+
+			.typora-export-show-outline .typora-export-sidebar {
+				display: none;
+			}
+
+			figure {
+				overflow-x: visible;
+			}
+		}
+
+		.footnote-line {
+			margin-top: 0.714em;
+			font-size: 0.7em;
+		}
+
+		a img,
+		img a {
+			cursor: pointer;
+		}
+
+		pre.md-meta-block {
+			font-size: 0.8rem;
+			min-height: 0.8rem;
+			white-space: pre-wrap;
+			background: rgb(204, 204, 204);
+			display: block;
+			overflow-x: hidden;
+		}
+
+		p>.md-image:only-child:not(.md-img-error) img,
+		p>img:only-child {
+			display: block;
+			margin: auto;
+		}
+
+		#write.first-line-indent p>.md-image:only-child:not(.md-img-error) img {
+			left: -2em;
+			position: relative;
+		}
+
+		p>.md-image:only-child {
+			display: inline-block;
+			width: 100%;
+		}
+
+		#write .MathJax_Display {
+			margin: 0.8em 0px 0px;
+		}
+
+		.md-math-block {
+			width: 100%;
+		}
+
+		.md-math-block:not(:empty)::after {
+			display: none;
+		}
+
+		.MathJax_ref {
+			fill: currentcolor;
+		}
+
+		[contenteditable="true"]:active,
+		[contenteditable="true"]:focus,
+		[contenteditable="false"]:active,
+		[contenteditable="false"]:focus {
+			outline: 0px;
+			box-shadow: none;
+		}
+
+		.md-task-list-item {
+			position: relative;
+			list-style-type: none;
+		}
+
+		.task-list-item.md-task-list-item {
+			padding-left: 0px;
+		}
+
+		.md-task-list-item>input {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			margin-left: -1.2em;
+			margin-top: calc(1em - 10px);
+			border: none;
+		}
+
+		.math {
+			font-size: 1rem;
+		}
+
+		.md-toc {
+			min-height: 3.58rem;
+			position: relative;
+			font-size: 0.9rem;
+			border-radius: 10px;
+		}
+
+		.md-toc-content {
+			position: relative;
+			margin-left: 0px;
+		}
+
+		.md-toc-content::after,
+		.md-toc::after {
+			display: none;
+		}
+
+		.md-toc-item {
+			display: block;
+			color: rgb(65, 131, 196);
+		}
+
+		.md-toc-item a {
+			text-decoration: none;
+		}
+
+		.md-toc-inner:hover {
+			text-decoration: underline;
+		}
+
+		.md-toc-inner {
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.md-toc-h1 .md-toc-inner {
+			margin-left: 0px;
+			font-weight: 700;
+		}
+
+		.md-toc-h2 .md-toc-inner {
+			margin-left: 2em;
+		}
+
+		.md-toc-h3 .md-toc-inner {
+			margin-left: 4em;
+		}
+
+		.md-toc-h4 .md-toc-inner {
+			margin-left: 6em;
+		}
+
+		.md-toc-h5 .md-toc-inner {
+			margin-left: 8em;
+		}
+
+		.md-toc-h6 .md-toc-inner {
+			margin-left: 10em;
+		}
+
+		@media screen and (max-width: 48em) {
+			.md-toc-h3 .md-toc-inner {
+				margin-left: 3.5em;
+			}
+
+			.md-toc-h4 .md-toc-inner {
+				margin-left: 5em;
+			}
+
+			.md-toc-h5 .md-toc-inner {
+				margin-left: 6.5em;
+			}
+
+			.md-toc-h6 .md-toc-inner {
+				margin-left: 8em;
+			}
+		}
+
+		a.md-toc-inner {
+			font-size: inherit;
+			font-style: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+		}
+
+		.footnote-line a:not(.reversefootnote) {
+			color: inherit;
+		}
+
+		.reversefootnote {
+			font-family: ui-monospace, sans-serif;
+		}
+
+		.md-attr {
+			display: none;
+		}
+
+		.md-fn-count::after {
+			content: ".";
+		}
+
+		code,
+		pre,
+		samp,
+		tt {
+			font-family: var(--monospace);
+		}
+
+		kbd {
+			margin: 0px 0.1em;
+			padding: 0.1em 0.6em;
+			font-size: 0.8em;
+			color: rgb(36, 39, 41);
+			background: rgb(255, 255, 255);
+			border: 1px solid rgb(173, 179, 185);
+			border-radius: 3px;
+			box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+			white-space: nowrap;
+			vertical-align: middle;
+		}
+
+		.md-comment {
+			color: rgb(162, 127, 3);
+			opacity: 0.6;
+			font-family: var(--monospace);
+		}
+
+		code {
+			text-align: left;
+			vertical-align: initial;
+		}
+
+		a.md-print-anchor {
+			white-space: pre !important;
+			border-width: initial !important;
+			border-style: none !important;
+			border-color: initial !important;
+			display: inline-block !important;
+			position: absolute !important;
+			width: 1px !important;
+			right: 0px !important;
+			outline: 0px !important;
+			background: 0px 0px !important;
+			text-decoration: initial !important;
+			text-shadow: initial !important;
+		}
+
+		.os-windows.monocolor-emoji .md-emoji {
+			font-family: "Segoe UI Symbol", sans-serif;
+		}
+
+		.md-diagram-panel>svg {
+			max-width: 100%;
+		}
+
+		[lang="flow"] svg,
+		[lang="mermaid"] svg {
+			max-width: 100%;
+			height: auto;
+		}
+
+		[lang="mermaid"] .node text {
+			font-size: 1rem;
+		}
+
+		table tr th {
+			border-bottom: 0px;
+		}
+
+		video {
+			max-width: 100%;
+			display: block;
+			margin: 0px auto;
+		}
+
+		iframe {
+			max-width: 100%;
+			width: 100%;
+			border: none;
+		}
+
+		.highlight td,
+		.highlight tr {
+			border: 0px;
+		}
+
+		mark {
+			background: rgb(255, 255, 0);
+			color: rgb(0, 0, 0);
+		}
+
+		.md-html-inline .md-plain,
+		.md-html-inline strong,
+		mark .md-inline-math,
+		mark strong {
+			color: inherit;
+		}
+
+		.md-expand mark .md-meta {
+			opacity: 0.3 !important;
+		}
+
+		mark .md-meta {
+			color: rgb(0, 0, 0);
+		}
+
+		@media print {
+
+			.typora-export h1,
+			.typora-export h2,
+			.typora-export h3,
+			.typora-export h4,
+			.typora-export h5,
+			.typora-export h6 {
+				break-inside: avoid;
+			}
+		}
+
+		.md-diagram-panel .messageText {
+			stroke: none !important;
+		}
+
+		.md-diagram-panel .start-state {
+			fill: var(--node-fill);
+		}
+
+		.md-diagram-panel .edgeLabel rect {
+			opacity: 1 !important;
+		}
+
+		.md-fences.md-fences-math {
+			font-size: 1em;
+		}
+
+		.md-fences-advanced:not(.md-focus) {
+			padding: 0px;
+			white-space: nowrap;
+			border: 0px;
+		}
+
+		.md-fences-advanced:not(.md-focus) {
+			background: inherit;
+		}
+
+		.typora-export-show-outline .typora-export-content {
+			max-width: 1440px;
+			margin: auto;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.typora-export-sidebar {
+			width: 300px;
+			font-size: 0.8rem;
+			margin-top: 80px;
+			margin-right: 18px;
+		}
+
+		.typora-export-show-outline #write {
+			--webkit-flex: 2;
+			flex: 2 1 0%;
+		}
+
+		.typora-export-sidebar .outline-content {
+			position: fixed;
+			top: 0px;
+			max-height: 100%;
+			overflow: hidden auto;
+			padding-bottom: 30px;
+			padding-top: 60px;
+			width: 300px;
+		}
+
+		@media screen and (max-width: 1024px) {
+
+			.typora-export-sidebar,
+			.typora-export-sidebar .outline-content {
+				width: 240px;
+			}
+		}
+
+		@media screen and (max-width: 800px) {
+			.typora-export-sidebar {
+				display: none;
+			}
+		}
+
+		.outline-content li,
+		.outline-content ul {
+			margin-left: 0px;
+			margin-right: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+			list-style: none;
+			overflow-wrap: anywhere;
+		}
+
+		.outline-content ul {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.outline-content strong {
+			font-weight: 400;
+		}
+
+		.outline-expander {
+			width: 1rem;
+			height: 1.42857rem;
+			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+			cursor: pointer;
+			padding-left: 4px;
+		}
+
+		.outline-expander::before {
+			content: "";
+			position: relative;
+			font-family: Ionicons;
+			display: inline-block;
+			font-size: 8px;
+			vertical-align: middle;
+		}
+
+		.outline-item {
+			padding-top: 3px;
+			padding-bottom: 3px;
+			cursor: pointer;
+		}
+
+		.outline-expander:hover::before {
+			content: "";
+		}
+
+		.outline-h1>.outline-item {
+			padding-left: 0px;
+		}
+
+		.outline-h2>.outline-item {
+			padding-left: 1em;
+		}
+
+		.outline-h3>.outline-item {
+			padding-left: 2em;
+		}
+
+		.outline-h4>.outline-item {
+			padding-left: 3em;
+		}
+
+		.outline-h5>.outline-item {
+			padding-left: 4em;
+		}
+
+		.outline-h6>.outline-item {
+			padding-left: 5em;
+		}
+
+		.outline-label {
+			cursor: pointer;
+			display: table-cell;
+			vertical-align: middle;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.outline-label:hover {
+			text-decoration: underline;
+		}
+
+		.outline-item:hover {
+			border-color: rgb(245, 245, 245);
+			background-color: var(--item-hover-bg-color);
+		}
+
+		.outline-item:hover {
+			margin-left: -28px;
+			margin-right: -28px;
+			border-left: 28px solid transparent;
+			border-right: 28px solid transparent;
+		}
+
+		.outline-item-single .outline-expander::before,
+		.outline-item-single .outline-expander:hover::before {
+			display: none;
+		}
+
+		.outline-item-open>.outline-item>.outline-expander::before {
+			content: "";
+		}
+
+		.outline-children {
+			display: none;
+		}
+
+		.info-panel-tab-wrapper {
+			display: none;
+		}
+
+		.outline-item-open>.outline-children {
+			display: block;
+		}
+
+		.typora-export .outline-item {
+			padding-top: 1px;
+			padding-bottom: 1px;
+		}
+
+		.typora-export .outline-item:hover {
+			margin-right: -8px;
+			border-right: 8px solid transparent;
+		}
+
+		.typora-export .outline-expander::before {
+			content: "+";
+			font-family: inherit;
+			top: -1px;
+		}
+
+		.typora-export .outline-expander:hover::before,
+		.typora-export .outline-item-open>.outline-item>.outline-expander::before {
+			content: "−";
+		}
+
+		.typora-export-collapse-outline .outline-children {
+			display: none;
+		}
+
+		.typora-export-collapse-outline .outline-item-open>.outline-children,
+		.typora-export-no-collapse-outline .outline-children {
+			display: block;
+		}
+
+		.typora-export-no-collapse-outline .outline-expander::before {
+			content: "" !important;
+		}
+
+		.typora-export-show-outline .outline-item-active>.outline-item .outline-label {
+			font-weight: 700;
+		}
+
+		.md-inline-math-container mjx-container {
+			zoom: 0.95;
+		}
+
+		mjx-container {
+			break-inside: avoid;
+		}
+
+		.md-alert.md-alert-note {
+			border-left-color: rgb(9, 105, 218);
+		}
+
+		.md-alert.md-alert-important {
+			border-left-color: rgb(130, 80, 223);
+		}
+
+		.md-alert.md-alert-warning {
+			border-left-color: rgb(154, 103, 0);
+		}
+
+		.md-alert.md-alert-tip {
+			border-left-color: rgb(31, 136, 61);
+		}
+
+		.md-alert.md-alert-caution {
+			border-left-color: rgb(207, 34, 46);
+		}
+
+		.md-alert {
+			padding: 0px 1em;
+			margin-bottom: 16px;
+			color: inherit;
+			border-left: 0.25em solid rgb(0, 0, 0);
+		}
+
+		.md-alert-text-note {
+			color: rgb(9, 105, 218);
+		}
+
+		.md-alert-text-important {
+			color: rgb(130, 80, 223);
+		}
+
+		.md-alert-text-warning {
+			color: rgb(154, 103, 0);
+		}
+
+		.md-alert-text-tip {
+			color: rgb(31, 136, 61);
+		}
+
+		.md-alert-text-caution {
+			color: rgb(207, 34, 46);
+		}
+
+		.md-alert-text {
+			font-size: 0.9rem;
+			font-weight: 700;
+		}
+
+		.md-alert-text svg {
+			fill: currentcolor;
+			position: relative;
+			top: 0.125em;
+			margin-right: 1ch;
+			overflow: visible;
+		}
+
+		.md-alert-text-container::after {
+			content: attr(data-text);
+			text-transform: capitalize;
+			pointer-events: none;
+			margin-right: 1ch;
+		}
+
+
+		html {
+			font-size: 19px;
+		}
+
+		html,
+		body {
+			margin: auto;
+			background: #fefefe;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		body {
+			font-family: "Vollkorn", Palatino, Times;
+			color: #333;
+			line-height: 1.4;
+			text-align: justify;
+		}
+
+		#write {
+			max-width: 960px;
+			margin: 0 auto;
+			margin-bottom: 2em;
+			line-height: 1.53;
+			padding-top: 40px;
+		}
+
+		@media only screen and (min-width: 1400px) {
+			#write {
+				max-width: 1100px;
+			}
+		}
+
+		@media print {
+			html {
+				font-size: 13px;
+			}
+		}
+
+		/* Typography
+-------------------------------------------------------- */
+
+		#write>h1:first-child,
+		h1 {
+			margin-top: 1.6em;
+			font-weight: normal;
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+
+		h2 {
+			margin-top: 2em;
+			font-weight: normal;
+		}
+
+		h3 {
+			font-weight: normal;
+			font-style: italic;
+			margin-top: 3em;
+		}
+
+		h1,
+		h2,
+		h3 {
+			text-align: center;
+		}
+
+		h2:after {
+			border-bottom: 1px solid #2f2f2f;
+			content: '';
+			width: 100px;
+			display: block;
+			margin: 0 auto;
+			height: 1px;
+		}
+
+		h1+h2,
+		h2+h3 {
+			margin-top: 0.83em;
+		}
+
+		p,
+		.mathjax-block {
+			margin-top: 0;
+			-webkit-hypens: auto;
+			-moz-hypens: auto;
+			hyphens: auto;
+		}
+
+		ul {
+			list-style: square;
+			padding-left: 1.2em;
+		}
+
+		ol {
+			padding-left: 1.2em;
+		}
+
+		@media print {
+			ol {
+				padding-left: 40px;
+			}
+		}
+
+		blockquote {
+			margin-left: 1em;
+			padding-left: 1em;
+			border-left: 1px solid #ddd;
+		}
+
+		code,
+		pre {
+			font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+			font-size: .9em;
+			background: white;
+		}
+
+		.md-fences {
+			margin-left: 1em;
+			padding-left: 1em;
+			border: 1px solid #ddd;
+			padding-bottom: 8px;
+			padding-top: 6px;
+			margin-bottom: 1.5em;
+		}
+
+		a {
+			color: #2484c1;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a img {
+			border: none;
+		}
+
+		h1 a,
+		h1 a:hover {
+			color: #333;
+			text-decoration: none;
+		}
+
+		hr {
+			color: #ddd;
+			height: 1px;
+			margin: 2em 0;
+			border-top: solid 1px #ddd;
+			border-bottom: none;
+			border-left: 0;
+			border-right: 0;
+		}
+
+		.ty-table-edit {
+			background: #ededed;
+			padding-top: 4px;
+		}
+
+		table {
+			margin-bottom: 1.333333rem
+		}
+
+		table th,
+		table td {
+			padding: 8px;
+			line-height: 1.333333rem;
+			vertical-align: top;
+			border-top: 1px solid #ddd
+		}
+
+		table th {
+			font-weight: bold
+		}
+
+		table thead th {
+			vertical-align: bottom
+		}
+
+		table caption+thead tr:first-child th,
+		table caption+thead tr:first-child td,
+		table colgroup+thead tr:first-child th,
+		table colgroup+thead tr:first-child td,
+		table thead:first-child tr:first-child th,
+		table thead:first-child tr:first-child td {
+			border-top: 0
+		}
+
+		table tbody+tbody {
+			border-top: 2px solid #ddd
+		}
+
+		.task-list {
+			padding: 0;
+		}
+
+		.md-task-list-item {
+			padding-left: 1.6rem;
+		}
+
+		.md-task-list-item>input:before {
+			content: '\221A';
+			display: inline-block;
+			width: 1.33333333rem;
+			height: 1.6rem;
+			vertical-align: middle;
+			text-align: center;
+			color: #ddd;
+			background-color: #fefefe;
+		}
+
+		.md-task-list-item>input:checked:before,
+		.md-task-list-item>input[checked]:before {
+			color: inherit;
+		}
+
+		.md-tag {
+			color: inherit;
+			font: inherit;
+		}
+
+		#write pre.md-meta-block {
+			min-height: 35px;
+			padding: 0.5em 1em;
+		}
+
+		#write pre.md-meta-block {
+			white-space: pre;
+			background: #f8f8f8;
+			border: 0px;
+			color: #999;
+
+			width: 100vw;
+			max-width: calc(100% + 60px);
+			margin-left: -30px;
+			border-left: 30px #f8f8f8 solid;
+			border-right: 30px #f8f8f8 solid;
+
+			margin-bottom: 2em;
+			margin-top: -1.3333333333333rem;
+			padding-top: 26px;
+			padding-bottom: 10px;
+			line-height: 1.8em;
+			font-size: 0.9em;
+			font-size: 0.76em;
+			padding-left: 0;
+		}
+
+		.md-img-error.md-image>.md-meta {
+			vertical-align: bottom;
+		}
+
+		#write>h5.md-focus:before {
+			top: 2px;
+		}
+
+		.md-toc {
+			margin-top: 40px;
+		}
+
+		.md-toc-content {
+			padding-bottom: 20px;
+		}
+
+		.outline-expander:before {
+			color: inherit;
+			font-size: 14px;
+			top: auto;
+			content: "\f0da";
+			font-family: FontAwesome;
+		}
+
+		.outline-expander:hover:before,
+		.outline-item-open>.outline-item>.outline-expander:before {
+			content: "\f0d7";
+		}
+
+		/** source code mode */
+		#typora-source {
+			font-family: Courier, monospace;
+			color: #6A6A6A;
+		}
+
+		.html-for-mac #typora-sidebar {
+			-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+		}
+
+		.cm-s-typora-default .cm-header,
+		.cm-s-typora-default .cm-property,
+		.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+			color: #428bca;
+		}
+
+		.cm-s-typora-default .cm-atom,
+		.cm-s-typora-default .cm-number {
+			color: #777777;
+		}
+
+		.typora-node .file-list-item-parent-loc,
+		.typora-node .file-list-item-time,
+		.typora-node .file-list-item-summary {
+			font-family: arial, sans-serif;
+		}
+
+		.md-task-list-item>input {
+			margin-left: -1.3em;
+			margin-top: calc(1rem - 12px);
+		}
+
+		.md-mathjax-midline {
+			background: #fafafa;
+		}
+
+		.md-fences .code-tooltip {
+			bottom: -2em !important;
+		}
+
+		.dropdown-menu .divider {
+			border-color: #e5e5e5;
+		}
+	</style>
+	
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body class='typora-export'>
+	
+	<nav>
+		<ul>
+			<li><a href="#ecouter">Contrôles audio</a></li>
+			<br>
+			<li><a href="#presentation">Présentation</a> </li>
+			<li><a href="#introduction">Introduction</a> </li>
+			<li><a href="#partie1">Partie 1</a> </li>
+			<li><a href="#partie2">Partie 2</a> </li>
+			<li><a href="#partie3">Partie 3</a> </li>
+			<li><a href="#partie4">Partie 4</a> </li>
+		</ul>
+	</nav>
+	<div class='typora-export-content'>
+		<div id='write' class=''>
+			<h1 id='célébration-de-données-molles'><em>Célébration de données molles</em></h1>
+			<p style="text-align: center;">Texte écrit et lu par Lena MK</p>
+			<br>
+			<hr/>
+			<p>&nbsp;</p>
+			<h2 id='ecouter'>Contrôles audio</h2>
+			<figure class='table-figure'>
+				<table id="audioControls">
+					<tr>
+						<td>Présentation</td>
+						<td><audio controls>  
+								<source src="./files/presentation.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td>Introduction</td>
+						<td><audio controls>  
+								<source src="./files/intro.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td>Partie 1: l'espace numérique</td>
+						<td><audio controls>  
+								<source src="./files/partie1.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td>Partie 2: l'espace physique</td>
+						<td><audio controls>  
+								<source src="./files/partie2.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td>Partie 3: la fabrication</td>
+						<td><audio controls>  
+								<source src="./files/partie3.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+					<tr>
+						<td>Partie 4: les rencontres</td>
+						<td><audio controls>  
+								<source src="./files/partie4.mp3" type="audio/mpeg"> 
+							Erreur dans le chargement du fichier audio. 
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</figure>
+
+			<hr />
+			<p>&nbsp;</p>
+		
+			<p><em>Transcription</em></p>
+			
+			<h2 id='presentation'>Présentation</h2>
+			<p>Salut, moi c’est Lena MK, je suis au doctorat en histoire de l&#39;art et en informatique à l&#39;Université de Montréal. Pour mon examen de synthèse, j’ai créé le projet qui s’appelle <em>Célébration de données molles</em>. Ce projet, c’est une recherche-création&nbsp;: c’est donc à la fois un objet, un grand mobile composé de pompons colorés sur lequel j’ai travaillé pendant plusieurs mois, et tout un processus de recherche qui a accompagné la création. J’ai partagé tout ça avec les membres de mon jury, des ami·e·s et des collègues, au cours d’une démonstration, un événement qui a eu lieu du 20 au 22 mai 2025. La description sensorielle, dont je fais ici la lecture, présente cette installation puis retrace quatre grandes étapes de travail&nbsp;: de l’espace numérique à la transposition vers l’espace physique, puis la fabrication, et finalement les rencontres qui s’en sont suivies.
+			</p>
+			<p>À l’instar d’une médiation guidée, ou d’un livre audio, vous pouvez fermer les yeux et laisser libre cours à votre imaginaire pendant que vous écoutez le son de ma voix vous guider à travers l’expérience de la <em>Célébration de données molles</em>.</p>
+			<p>Cette lecture omet trois courtes notes de bas de page.</p>
+			<p>&nbsp;</p>
+			<h2 id='introduction'>Introduction</h2>
+			<p>Mai 2025, nous sommes à l’Université de Montréal, au deuxième étage du pavillon Lionel-Groulx. La salle des doctorant·e·s en recherche-création du département d’histoire de l’art, de cinéma et des médias audiovisuels (C-2086) devient un espace de démonstration pour ma recherche-création. La pièce – équipée de bureaux, de chaises, de panneaux mobiles et de lampes sur pied – est transformée par l’apparition, en son centre, d’un mobile dont les tons varient du pastel vers quelques vifs éclats colorés. Seuls, regroupés par 2 ou parfois plus, les centaines de pompons pelucheux qui composent le mobile sont espacés sur des guirlandes qui cascadent tout autour de la structure. Le tout semble flotter au-dessus d’un large tapis gris. Quelques guirlandes plus longues atteignent le sol et s’écrasent paresseusement dans long pelage duveteux du tapis. L’éclairage indirect, fourni par les lampes réparties autour de la salle, signale les autres sections présentées pour la partie pratique de l’examen de synthèse. </p>
+			<p>À droite de l’entrée de la salle, un long mur formé par des panneaux, devant lequel est placée une table, donne à voir des étapes du processus de recherche-création&nbsp;: copie de l’examen écrit remis la semaine précédente, classeur avec des extraits imprimés des jeux de données employés, impressions d’algorithmes et de visualisations épinglées sur les panneaux<sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup>. S’ensuit, dans le sens inverse des aiguilles d’une montre, un mur de la salle qui présente les recherches et les prototypes matériels, puis la légende et des détails à propos de la fabrication du mobile. Un panneau au fond de la salle invite les personnes présentes à participer à une documentation collective par la prise de photographies ou de vidéos, ou encore par le partage de commentaires et de retours sur la recherche-création. Tout au fond de l’espace, un tableau vert est orné de l’inscription «&nbsp;bricoler des données&nbsp;» écrite à la craie. En dessous, deux bureaux sont placés face à face pour former un îlot. Ils sont recouverts d’une large quantité de matériel d’artisanat&nbsp;: pompons utilisés pour fabrication du mobile, matériel de broderie, perles et accessoires décoratifs. Pensé comme un mini-atelier pour expérimenter avec l’artisanat de données, il me permet aussi de poursuivre la fabrication (très chronophage) des guirlandes de pompons qui composent le mobile. Le dernier mur de la salle est divisé en trois sections&nbsp;: proche du fond et du mini-atelier, un espace de travail avec un ordinateur et deuxième écran donne accès au travail numérique réalisé. Un second bureau est garni de livres, de références et de sources d’inspiration importantes pour mon projet doctoral. Finalement, proche de l’entrée, un espace est réservé pour permettre à chacun·e de déposer ses affaires. On choisit d’enlever ses chaussures (<em>[souliers]</em>) ou d’enfiler des protège-souliers et on peut s’y désinfecter les mains.</p>
+			<p>La recherche-création présentée dans cet espace s’appelle <em>Célébration de données molles</em>. Elle a pour sujet la collection du Musée d’art contemporain de Montréal, qu’on appelle aussi par son acronyme, le MAC. Cette collection est constituée de milliers d’œuvres d’art, à laquelle on ne peut pas avoir accès dans son ensemble. Elles ne se trouvent même pas toutes au même endroit. Le musée dispose de plusieurs espaces que l’on nomme les réserves, où chaque œuvre est entreposée selon ses besoins de conservation. Certaines d’entre elles sont habituellement exposées dans le musée, notamment dans l’exposition permanente. Toutefois, avec la fermeture actuelle du MAC pour la transformation de sa carapace architecturale, et malgré l’utilisation d’un espace temporaire pour maintenir sa programmation, très peu d’œuvres sont accessibles en ce moment. De plus, il y en a toujours au moins quelques unes qui sont en voyage. Elles participent, par exemple, à des expositions itinérantes du musée ou elle peuvent aussi être prêtées pour prendre part à d’autres expositions. Cette collection existe donc bel et bien, mais comment pouvons-nous y avoir accès? La recherche-création que je vous présente propose une réponse à cette question.</p>
+
+			<h2 id='partie1'>Partie 1 - L’espace numérique</h2>
+			
+			<p>Si la collection semble donc compliquée à se représenter, en tant qu’immense ensemble d’œuvres d’art, sa description structurée, sous la forme de données, nous apporte avec une autre façon de l’appréhender. Pour mon projet, l’angle sous lequel j’ai choisi d’aborder cette collection, et ces données, est l’origine des artistes qui ont créé toutes ces œuvres. Dans les données publiées par le MAC, ce sont les nationalités associées à chaque artiste qui sont renseignées. Celles-ci sont donc distinctes des citoyennetés autochtones, et n&#39;identifient pas non plus les québécois·e·s. Dans l’idée de proposer une approche plus inclusive, qui correspond davantage à ma vision du monde, j’en ai fait une réinterprétation qui rassemble dans l’appellation  «&nbsp;origine&nbsp;» les valeurs associées aux  «&nbsp;nationalités&nbsp;», aux «&nbsp;peuplesAutochtones&nbsp;» et à la production d’ «&nbsp;art contemporain québécois&nbsp;». Par le cumul des différentes identités, je souhaite élargir les possibles appartenances pouvant être revendiquées par les artistes. Plutôt que de concevoir la diversité comme une contrainte technique ou un problème de classification, j’aimerais la célébrer en cherchant des façons de l’exprimer et de la valoriser. </p>
+			<p>À cette première étape, les données sont en format  «&nbsp;json&nbsp;». C’est un format textuel, qui décrit chaque objet (ex&nbsp;: une œuvre d’art) par une série de propriétés et de valeurs (pour une <a href='https://macrepertoire.macm.org/oeuvre/legend'>œuvre</a> de ᑎᕕᑎᐊᓗ Davidialuk Alasua Amittu, par ex&nbsp;: «&nbsp;titre: &quot;Legend&quot;, dateProduction: &quot;1963&quot;, categorie: &quot;Estampe&quot;&nbsp;» ). Découvrir les données dans ce format est plutôt fastidieux pour un humain: les 7840 œuvres, exportées vers un document PDF par exemple, atteindraient 6313 pages à lire, et la liste des 1870 artistes, 2645 pages. Pour une machine, à l’inverse, parcourir les entrées en suivant les instructions d’un algorithme est beaucoup plus aisé. J’ai donc écrit un algorithme qui ordonne visuellement ces données. Dans l’idée d’aborder la constitution de cette collection, je les ai classées par année d’acquisition.</p>
+			<p>Les graphiques de type chronologiques sont souvent formés de deux axes. En bas, un axe (X; abscisse) représente le temps, les années d’acquisition. À gauche, l’autre axe (Y; ordonnée) indique la quantité, le nombre d’œuvres acquises cette année-là. Inspirée par les rideaux de perles, dont l’axe horizontal est placé en haut et d’où tombe chaque guirlande, j’ai placé l’intersection entre mes deux axes en haut à gauche: les années augmentent progressivement de gauche à droite, et la ribambelle d’œuvres gravite vers le bas de l’écran. Pour certaines années, comme 1992 qui semble complètement disproportionnée due à l’acquisition massive de la collection Lavalin, la guirlande semble interminable et requiert de longuement faire défiler l’image à l’écran pour arriver au bout. Au cours des premiers essais, j’ai symbolisé chaque œuvre d’art par un zéro, inscrit en blanc sur un fond presque noir. Le chiffre zéro est une marque substitutive, évoquant visuellement un pompon ou une perle. L’esthétique se rapproche de celle de la matrice, avec des chiffres qui défilent sur un fond sombre.</p>
+			<p>J’ai ensuite précisé mon algorithme pour représenter les origines associées à chaque œuvre. Pour ce faire, je devais d’abord parcourir la liste des artistes qui ont créé l’œuvre – il s’agit souvent d’un·e seul·e artiste, mais il y a aussi des collaborations, c’est pourquoi il s’agit d’une liste à parcourir – et ensuite de rassembler toutes les origines de ces artistes pour les associer à l’œuvre en question. La plupart des œuvres ont deux origines associées, canadienne et québécoise, mais certaines n’en ont qu’une et d’autres vont jusqu’à en avoir cinq. Ainsi, à la place du zéro, j’ai progressivement testé plusieurs représentations visuelles de ce cumul d’origines. J’ai joué avec le principe des variables visuelles multifonctionnelles, c’est-à-dire l’idée qu’une même variable visuelle soit porteuse de plusieurs informations pertinentes pour la lecture du graphique. Dans ce cas, au lieu d’avoir une <em>forme</em> – exemple: un point – qui indiquerait une œuvre d’art, et une <em>couleur</em> qui représenterait une origine, j’ai uniquement utilisé un index numérique des origines. J’ai d’abord fait une liste des origines présentes dans les données et je les ai triées par occurrence. Ainsi, un chiffre bas, comme le 0 (canadienne) ou le 1 (québécoise), indique une origine qui advient souvent dans le jeu de données, tandis qu’un chiffre élevé signifie la singularité de celle-ci. L’échelle n’est toutefois pas linéaire. Elle suit plutôt une courbe inversement exponentielle; en termes d’index, 0 et 1 reviennent très souvent, 2 à 4 sont récurrentes, et progressivement, on atteint de nombreux chiffres qui ont deux occurrences, puis une seule. Il y a donc quelques origines très communes et de nombreuses origines plus rares, qui n’apparaissent qu’une ou deux fois dans les données.</p>
+			<p>Visuellement, j’ai testé plusieurs façon de représenter les origines en employant le cumul des index associés. Tout d’abord, j’ai testé la superposition des chiffres, ce qui créait des zones plus lumineuses pour les œuvres avec d’avantage d’origines associées. Souvent rendus illisibles, les chiffres formaient plutôt des constellations, en créant des liens optiques entre les œuvres aux origines plus nombreuses. Ensuite, j’ai aussi expérimenté avec l’addition, en inscrivant chaque valeur suivie du symbole «&nbsp;+&nbsp;», ce qui formait des inscriptions plus longues pour les œuvres avec plusieurs origines. J’obtenais ainsi des sortes de bavures horizontales, évoquant le <em>glitch</em> ou les dérapages. Ces essais étaient des façons créatives pour moi d’explorer le contenu de la collection, d’expérimenter, pour obtenir un aperçu de la répartition des origines et des œuvres au fil des acquisitions. Ils servaient aussi de préparation algorithmique, pour entraîner ma capacité à manipuler les données et leur représentation.</p>
+			<h2 id='partie2'>Partie 2 - L’espace physique</h2>
+			<p>Dans ce projet, mon objectif n’était toutefois pas juste de travailler dans l’espace numérique, mais d’explorer la transposition de ces données et de ces formes visuelles dans l’espace physique. Mon désir était de rendre mon travail plus accessible. En tant que personne formée en informatique, je peux travailler avec des données, les manipuler et même jouer avec. Pour pouvoir partager cette agentivité avec des personnes dont la littératie numérique n’inclut pas la programmation, j’ai pensé que la matérialité des données deviendrait plus tangible si elles étaient littéralement palpables. En astronomie par exemple, des mobiles explicitent les trajectoires et le positionnement relatif de chaque planète du système solaire, un aspect de l’univers que nous ne pouvons pas observer directement. En interagissant et en manipulant cet objet physique, nous accédons plus facilement à un ensemble d’informations complexes. Je propose donc de fabriquer une objet équivalent pour se représenter la collection du MAC.</p>
+			<p>De plus, il n’existe encore que trop peu de solutions à l’accessibilité des graphiques interactifs ou de l’art algorithmique. Dans le cas d’images programmées ou de visuels générés par ordinateur, ce n’est pas évident d’intégrer des approches multisensorielles au travail en cours. Dans l’espace physique, le toucher offre une interface presque universelle. Combiné avec les autres sens comme la vision et l’ouïe, on peut accommoder les expériences des personnes issues de la diversité capacitaire.</p>
+			<p>J’ai aussi choisi de fabriquer, à partir de ces données et d’un sujet sensible, un objet ludique. Le monde m’a semblé particulièrement dur cet hiver, des nouvelles difficiles en ce qui concerne la santé de mes proches à la désolante actualité de la politique mondiale, en passant par les luttes pour le financement du milieu de la culture. Aux prises avec ces réalités, je voulais contribuer un peu de douceur, produire un bref moment d’émerveillement ou même déclencher un petit rire. Un objet peut être ludique tout en conservant un côté sérieux. Je considère cette apparente contradiction plutôt comme une opportunité de permettre la coexistence de plusieurs couches de lecture et d’interprétation. Cela facilite aussi la médiation, je peux ainsi varier la profondeur et la complexité des sujets abordés avec les personnes présentes – des chercheur·se·s et des professionnel·le·s en histoire de l’art, en muséologie ou encore en informatique aux néophytes de ces disciplines, – en cherchant à éviter toute forme de discrimination sur l’âge, l’éducation, les références culturelles ou les préférences personnelles.</p>
+			<p>Comme je l’ai mentionné dans mes expérimentation graphiques, j’avais comme idée de détourner un rideau de perles. Objet scintillant ou pailleté, à l’esthétique un peu <em>kitch</em>, il me rappelle des souvenirs d’enfance, du son des perles qui s’entrechoquent à l’ondulation satisfaisante lorsqu’on l’effleurait des doigts<sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup>. Le perlage fait partie des pratiques artisanales qui transposent aisément des images programmées. De l’espace numérique, chaque pixel peut être traduit par une perle. Comme je vis et je travaille à Tiohtià:ke · Montréal, j’ai eu le plaisir et le privilège de découvrir de nombreuses pratiques ancestrales et contemporaines de perlage autochtone, comme le travail de Nico Williams par exemple. Si ces découvertes ont largement contribué à mon fort intérêt pour ces pratiques, elles m’ont aussi sensibilisée aux enjeux sociopolitiques et aux revendications qui, sur ce territoire, y sont rattachées. Loin de la fine précision des perles Miyuki, un fabricant de perles japonais très apprécié par de nombreux artistes qui travaillent le perlage, je pensais donc plutôt à des accessoires de bricolage pour enfants ou à du matériel plus fantaisiste ou même grotesque, comme dans le style joyeusement <em>queer</em> et exubérant de Nick Cave.
+			</p>
+			<p>J’ai fait une première série d’achats, en quête du matériel qui pourrait servir à la réalisation de mon pseudo-rideau de perles. Alors que je pensais que le tintement des perles me plairait, j’ai réalisé que le toucher dur et froid, ou plastique, ne correspondait pas à une matière que je souhaitais travailler. Malgré mon intérêt pour la programmation, je savais déjà, par exemple, que je n’aime pas particulièrement travailler avec du <em>hardware</em>, du matériel électronique, car la manipulation de puces et de câbles ne m’apporte pas vraiment de plaisir tactile. J’ai une préférence pour les matières molles, ou douces, comme le fil et les tissus. Une de mes œuvres d’art favorite, de l’artiste Faith Holland, joue d’ailleurs avec ce sujet. Dans sa série intitulée <em>Soft Computing</em>, elle fabrique des ordinateurs, des claviers, des souris et des câbles en peluche, matérialisant ainsi la relation tactile et parfois intime que nous pouvons entretenir, des fois malgré nous, avec la technologie. Parmi mes autres trouvailles au magasin d’artisanat, j’avais justement un sac de pompons. Doux et mous, j’ai été immédiatement séduite par l’idée de créer une installation avec des centaines de pompons: drôles, joyeux, un peu absurdes et surtout, satisfaisants à toucher comme à manipuler. Peut-être de façon moins consciente, j’ai aussi favorisé un médium qui me permettait d’avoir une pratique très minimale sur le plan technique: le fil et l’aiguille. Simple en terme de prérequis matériel, cette approche textile est également appréciable lorsqu’on bricole car c’est généralement facile de corriger une erreur. Il suffit de couper le fil, faire un nœud et recommencer. </p>
+			<p>Au début, l’idée de fabriquer des guirlandes de pompons pour représenter des données me semblait si littérale qu’elle en avait l’air trop simple. L’idée l’est peut-être, mais la réalisation a compté beaucoup plus d’étapes et de défis qu’anticipé. Le premier obstacle que j’ai rencontré, et pas des moindres, est celui de l’échelle. Enfiler quelques pompons le long d’un fil ne semblait pas si long, mais en prévision de l’achat du matériel, j’ai compté, concrètement, combien il m’en faudrait. Résultat: avec les 7’840 œuvres dans les données ouvertes de la collection, il aurait fallut un total de 12’453 pompons et plus de 200 mètres de fils. Malgré l’utilisation de pompons plutôt petits, la guirlande la plus longue – la fameuse année 1992 – aurait ainsi mesuré plus de 36 mètres. En comparaison, une baleine bleue ne mesure «&nbsp;que&nbsp;» 24 mètres et un autobus de la STM, 12 mètres. L’échelle est donc monumentale, pour la fabrication comme pour la mise à vue de l’objet. Un second problème qui va de pair avec le problème de taille est celui du coût financier pour l’achat du matériel. Sans subvention ou financement attribué à la réalisation de ce projet, c’était impératif de limiter les dépenses. </p>
+			<p>J’ai dû, tout d’abord, réduire l’échelle du projet: au lieu de travailler sur toutes les œuvres, j’ai filtré pour ne garder qu’une seule des douze catégories artistiques présentes dans la collection. Plutôt que de me pencher sur les peintures ou les sculptures, j’ai choisi la catégorie qu’on appelle les «&nbsp;techniques mixtes&nbsp;». En fait, c’est presque une «&nbsp;anti&nbsp;»-catégorie, celle qu’on emploie lorsqu’on ne sait pas exactement comment catégoriser une œuvre. Au final, cette sélection correspond bien au sujet choisi, dans l’idée de jouer avec les défis de la catégorisation pour célébrer la diversité. En plus, elle contient certaines de mes œuvres préférées dans la collection, comme deux perlages de Nico Williams justement. Par ailleurs, on attribuerait fort probablement cette catégorie à la création issue de ce projet. </p>
+			<p>Ensuite, même en réduisant à un peu de moins de 500 œuvres d’art, il me fallait tout de même acheter près de mille pompons. En termes de couleurs, je voulais partir de l’environnement très clair, généralement blanc dans les musées ou plutôt beige et gris dans d’autres espaces comme à l’Université. J’ai donc privilégié un code couleur avec des tons pastels pour les origines qui sont présentes en grand nombre et des couleurs vives, parfois même agrémentées de paillettes, pour valoriser les origines plus atypiques. Ça n’a pas non plus été évident de trouver un fournisseur de pompons auprès duquel je pouvais acheter, avec un budget restreint, des centaines de pompons pour les deux couleurs principales, tout en ayant assez d’autre couleurs pour compléter le projet. J’ai tout d’abord cherché des solutions dans des magasins locaux. Ne trouvant pas, j’ai dû passer outre ma réticence à faire des achats sur les grandes plateformes de vente en ligne et j’ai fini par trouver le matériel nécessaire sur TEMU. Ces pompons sont vendus comme accessoire de bricolage mais aussi comme divertissement pour les propriétaires de chats, et je ris à constater que cette plateforme m’identifie désormais comme une personne particulièrement adepte de chats. Je reçois des courriels qui m’incitent à acheter d’autres pompons, comme si mille pompons ne suffiraient pas à ma horde imaginaire de félins. Pour les personnes qui ne me connaissent pas, je suis plutôt « chien » dans la vie, mais je suis très amusée à l’idée de maintenant de compter parmi mes identités numériques une passion extravagante pour les chats.</p>
+			<h2 id='partie3'>Partie 3 - La fabrication</h2>
+			<p>Une fois la commande effectuée et livrée à bon port en une dizaine de jours ouvrables, je pensais pouvoir enfin « commencer ». Je mets « commencer » entre guillemets, parce que bien sûr que tout ce que j’ai décrit jusqu’à présent fait partie du projet, mais c’est surtout pour dire que j’avais hâte de mettre la main à la pâte et de commencer le travail manuel. J’avais désormais chez moi ce sac rempli de pompons, qui me semblait très gros et plein de promesses tout en étant si léger que je me demandais si le contenu était réellement celui que j’avais commandé. Malgré ma hâte, j’ai réalisé qu’il restait beaucoup de décision à prendre: quel fil utiliser, comment joliment attacher les multiples pompons ensemble dans le cas où il y a plusieurs origines associées à une œuvre, mais aussi trouver une structure sur laquelle j’allais les rassembler pour former un tout.</p>
+			<p>J’ai commencé à faire des tests, qu’on peut aussi appeler des prototypes, pour expérimenter avec la matière. Initialement, j’avais pensé au fil de pêche, car il est solide et transparent et je m’en étais servie par le passé pour accrocher des tableaux par exemple. Par contre, j’ai réalisé que je ne souhaitais pas travailler avec une matière aussi plastique, qui, en plus, m’évoque les désastres écologiques causé par la surpêche et les déchets plastiques dans les océans. J’ai donc testé différents types de fils que j’avais chez moi&nbsp;: le fil à couture ne semblait pas assez résistant mais je n’étais pas convaincue par l’utilisation du fil à broder, trop épais à mon goût. J’ai fait quelques tests avec de la laine aussi, mais je la voyais se dégrader par cette usage atypique. De plus, un fil plus épais requiert une aiguille plus grosse, et les deux avaient tendance à abîmer les pompons quand j’essayais de former une guirlande avec.</p>
+			<p>En même temps, je réfléchissais à des solutions pour assembler les pompons&nbsp;: comme je l’ai mentionné quand je présentais les données, la plupart des œuvres combinent deux origines (canadienne et québécoise) et certaines en ont trois, quatre ou même cinq. J’ai trouvé une solution plutôt satisfaisante en repensant à l’atelier de perlage autochtone que j’ai suivi au début de l’hiver. En fabriquant une paire de boucles d’oreilles <sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup>, j’ai tout d’abord appris qu’on ne faisait aucun nœud en perlage. En tant que bricoleuse insécure qui fait toujours plein de nœuds par peur que mon travail se défasse, je réfléchis souvent à la confiance quand je porte ces boucles d’oreilles. J’ai aussi appris à aligner deux perles en repassant le fil dans la première perle. Dans cette idée, j’ai pensé à utiliser une perle pour relier tous les pompons d’une œuvre. Il fallait alors une perle assez grosse pour que mon fil et mon aiguille puissent y repasser plusieurs fois. Les tests avec des perles en plastiques et en bois, combinés avec les différents fils, ne m’ont pas convaincue.</p>
+			<p>Je devais aussi trouver une structure qui allait soutenir tout ce matériel très mou. J’avais, depuis un moment déjà, l’idée d’utiliser un rack à vêtement comme support&nbsp;: une structure simple, facile à trouver seconde main et qu’on peut aisément démonter et remonter pour le transport. Vu de face, l’aspect rectangulaire – formé par la barre des vêtements, les deux poteaux qui la soutiennent et la barre en bas qui fournit de la stabilité tout en étant la jointure vers les petites pattes – pouvait faire allusion à un cadre pour les guirlandes de pompons qui prendraient la place des cintres. J’ai vite été rattrapée par la réalité quand j’ai repris les mesures de mes pompons. Dans le chaos de mes recherches et de la commande, entre le changement d’échelle, les contraintes en terme de disponibilité et les délais de livraison, j’ai hésité entre plusieurs tailles de pompons. Vu que j’avais réduit le nombre de pompons, je me disais qu’ils pourraient être un peu plus gros sans que ce soit problématique en terme d’échelle. Mon erreur, ou disons ce que j’ai oublié à ce moment-là, c’est que j’ai réduit la quantité (l’axe Y, la longueur) mais pas le nombre d’années (l’axe X, sur la largeur). En effet, je restais sur le principe de montrer l’évolution de la collection, au fur et à mesure de sa constitution entre 1964 et 2024. De plus, comme je l’ai déjà mentionné, la plupart des œuvres sont représentées par deux pompons. L’espacement requis pour conserver la lisibilité et la liberté de mouvement des guirlandes avec cette taille de pompons m’amenait à une largeur totale de presque quatre mètres. C’est pas mal plus gros qu’un rack à vêtement ça! En fait, c’est plus large que mon salon.</p>
+			<p>Encore une fois, je me suis fais rattraper par l’échelle du projet. Heureusement, j’ai un conjoint en construction qui insistait déjà pour construire la structure dont j’allais avoir besoin comme façon de me soutenir dans ce projet qui semblait devenir plus ambitieux et plus prenant à chaque étape. Comme je voulais que l’ensemble de l’objet soit à portée de main de la personne qui en ferait la découverte, nous avons trouvé la solution de former un cercle. Pour atteindre une circonférence de trois mètres quatre-vingt, on a seulement besoin d’un diamètre d’un mètre vingt. Joël a suggéré l’utilisation du tuyau de plomberie, en pex, très solide tout en étant un peu malléable, et facile à relier avec des connecteurs. On pouvait donc assembler des morceaux pour former un cerceau «&nbsp;sur mesure&nbsp;» pour ma structure. À la quincaillerie, puisque je me posais encore la question du fil, j’ai été voir ce qu’ils vendaient. Après tout, mon imaginaire est principalement composé de matériel de couture et de bricolage, mais ici c’est un tout autre milieu. Même s’il y a plus de cordes que de fils à proprement parler, j’ai flashé sur le fil de maçon&nbsp;: très solide, mais aussi soyeux et satiné. S’il vient habituellement dans des couleurs fluo, pour favoriser la visibilité sur les chantiers, j’en ai aussi trouvé du blanc. Équipée d’une bonne longueur de tuyaux et de fil, je suis retournée chez moi pour continuer à faire des tests.</p>
+			<p>Finalement, c’est dans une boutique de fabrication d’accessoire proche de chez moi que j’ai trouvé des petits anneaux métalliques, tels qu’utilisés pour assembler des bijoux. Très fins, il se fondaient dans la mollesse des pompons et étaient donc presque invisibles une fois au centre de l’assemblage de pompons. Cette esthétique du bijou – brillant mais discret, somptueux tout en restant délicat – m’a séduite. À ce moment, j’ai aussi remis la main sur un fil doré qui fonctionnait très bien avec cette idée&nbsp;: plus fin que le fil à broder classique, ce fil métallisé pour machine est presque invisible tout en scintillant légèrement. En plus, j’avais vu dans la même boutique des petits crochets comme ceux qui servent à ouvrir et à refermer un collier. J’ai pensé que ça pourrait permettre d’accrocher et de décrocher les guirlandes de leur structure, un atout important pour le transport qui me tracassait déjà. En effet, dès que j’ai commencé à réfléchir à la fabrication, j’ai commencé à m’inquiéter que tout s’emmêle dans le transport ou pendant l’installation. J’avais aussi des moments de panique où j’imaginais tous les pompons qui commençaient à tomber. C’était si dramatique dans mon imagination que je riais quand même un peu de l’absurdité de la situation.</p>
+			<p>Les tests avec les tuyaux et le fil de maçon ont tout de même portés leurs fruits&nbsp;: comme je n’aimais pas le toucher plastique du tuyau, j’avais commencé à le corder avec le fil pour le couvrir. J’ai ensuite pensé que je pourrai utiliser le cordage comme façon de répartir les crochets pour les guirlandes. Je ne pensais pas que ce serait aussi long, mais douze heures plus tard, j’avais enfin mon cerceau complet, cordé et avec chaque petit anneau prêt à accueillir une guirlande. Divisé en trois partie, je peux le démonter et le remonter, et utiliser l’emplacement des connecteurs comme points d’attache pour le suspendre. C’est là que le rideau de perles est devenu un mobile.</p>
+			<p>Je me suis dit&nbsp;: «&nbsp;Super, c’est parti pour les guirlandes de pompons&nbsp;!&nbsp;». Et bien non, encore une fois, il me restait encore du travail avant de pouvoir m’y mettre. Depuis mes visuels au croisement du rideau de perle et de la matrice, j’avais fait quelques tests de plus pour visualiser l’agencement des couleurs de pompons à commander. Mais je n’avais pas créé un code couleur complet, seulement pour les cinq origines les plus communes. Pour le reste, j’avais commandé plusieurs sacs de pompons multicolores, en me disant que ce serait suffisant pour associer chaque origine restante à une couleur. J’avais remis ce problème à plus tard, mais plus tard, c’était maintenant. J’ai commencé à trier les pompons par couleur, créant un joyeux chaos multicolore sur mon bureau et tout le long de la fenêtre à ma gauche. J’ai aussi écrit un autre algorithme pour générer la légende du mobile, qui associe chaque origine à une couleur, tout en indiquant combien il en faut. J’ai essayé de procéder, comme en art algorithmique, en me basant sur le hasard, entre le nombre de pompons disponibles et la prochaine origine à associer à une couleur. J’ai remarqué que je n’arrivais pas toujours à m’empêcher de faire des associations entre certaines origines et certaines couleurs. Au final, je suis moyennement satisfaite de ce code couleur, mais j’accepte que ça fait partie du jeu de travailler avec l’aléa et avec des contraintes. </p>
+			<p>Pour fabriquer les guirlandes, je m’étais aussi dit que ce serait bon d’avoir une « interface de fabrication ». Puisque je dois fabriquer une guirlande à la fois, l’important à cette étape n’est pas la vue d’ensemble mais le détail par année. Je suis donc retournée à mon clavier et à mon éditeur de code pour écrire, cette fois, un script qui utilise un paramètre dans l’URL de la page pour déterminer l’année à afficher. Le résultat retourne une guirlande de pompons pour une année spécifique et la légende des pompons utilisés. En travaillant, j’ai aussi ajouté les informations de base à propos de chaque œuvre&nbsp;: son ou ses artistes, le titre et la date de production. Ça rendait le travail plus agréable et satisfaisait ma curiosité, même si j’aurais souvent aimé prendre plus de temps pour chaque œuvre, aller sur le MACrépertoire (le site web du musée dédié à la valorisation de la collection) pour en savoir plus. J’ai quand même retenu certains détails, comme les deux œuvres qui associent trois pompons pour les origines canadienne, québécoise et roumaine et qui sont de Peter Krausz, anciennement professeur dans mon département; ou encore la très belle année 2020, qui regroupe notamment deux œuvres de Nico Williams, l’artiste anishinaabe dont je mentionnais la pratique de perlage plus tôt&nbsp;; de Carla Hemlock, une artiste kanien’kehá:ka, une œuvre dont les rubans qui envahissent le plancher du musée m’avait tant plu lorsque je l’ai vue exposée au MAC, en 2020 justement&nbsp;; et une œuvre de Dayna Danger, l’artiste qui cumule le plus d’origines dans la collection, selon mon interprétation&nbsp;: canadienne selon la nationalité, québécoise car active sur ce territoire, avec un héritage familial mixte entre des origines polonaises, métis et saulteaux (les deux dernières sont des citoyennetés autochtones). </p>
+			<p>Ça me semble être un bon moment pour aborder un point critique de ce travail. Quand j’ai créé la catégorie «&nbsp;origine&nbsp;», dans l’idée d’élargir l’identité au-delà des nationalités, j’ai procédé de façon cumulative. Ceci étant dit, je suis certaine que ce cumul n’est pas nécessairement représentatif des appartenances qui importent aux artistes. De nombreux québécois·e·s ne s’identifient pas comme canadien·ne·s, et cet enjeu est redoublé pour les artistes autochtones actifs au Québec, ainsi systématiquement labellisé avec les origines canadienne et québécoise. Je considère ça plutôt comme une proposition, que chaque personne concernée pourrait ensuite modifier pour ajouter ou enlever des origines. Je ne connais pas tous ces artistes personnellement, mais ce serait un plaisir et un honneur de faire évoluer le mobile à partir de leurs potentielles contributions en termes d’auto-déclaration.</p>
+			<p>Pour revenir à la fabrication, j’avais donc enfin commencé le fastidieux travail de création des guirlandes de pompons. Un problème auquel j’ai rapidement fait face est la médiocre qualité des petits anneaux que j’ai acheté. Systématiquement désalignés, il restait toujours un espace entre les deux bouts de la tige de métal qui formait l’anneau. Le beau fil métallisé, si fin et si délicat, ne cessait de passer au travers de cette ouverture et ainsi, s’échappait du rôle rassembleur de l’anneau. Heureusement, ma belle-sœur, curieuse du processus mais aussi solidaire du travail en cours, m’a beaucoup aidée en réalignant patiemment un petit anneau après l’autre. Dès que j’ai complété la première guirlande, j’ai aussi réalisé qu’il allait falloir trouver une solution en terme d’organisation et de rangement. La guirlande, au cours de l’ajout des 17 pompons représentant 10 œuvres, avait déjà tendance à s’emmêler avec le fil au bout de mon aiguille. De plus, puisque j’avais trouvé les petits crochets et que la structure était démontable, je préférais ranger et transporter les guirlandes séparément. En faisant le tour de mon appartement, j’ai trouvé des feuilles de lièges et un gros paquet de punaises, matériel pour un ancien projet que je n’avais finalement pas réalisé. J’ai donc commencé par fabriquer des bandes de liège, étiquetées avec les années d’acquisition qui correspondaient aux guirlandes. Au fur et à mesure de la fabrication, j’épinglais chaque guirlande sous l’année correspondante et je plaçais ensuite chaque bande de liège complétée en hauteur, pour éviter que les pompons traînent à terre et ramassent la poussière. Malgré le grand étendoir à vêtement suspendu à notre plafond, au bout d’un certain nombre de guirlandes, j’ai commencé à manquer de place. J’ai donc continué à inventer mon système de rangement. L’achat de cartons mousses fournissait une surface sur laquelle placer les bandes de lièges et j’enveloppais ensuite les guirlandes, une à une, dans du papier de soie pour éviter qu’elles s’emmêlent. Lorsque j’ai fabriqué la guirlande pour 1992, elle était si longue que j’ai dû progressivement l’envelopper dans le papier de soie pendant que j’ajoutais des pompons. Je ne connaissais donc pas sa longueur totale avant de la déballer, pendant l’installation. </p>
+			<p>&nbsp;</p>
+			<h2 id='partie4'>Partie 4 - Les rencontres</h2>
+			<p>Des centaines de pompons plus tard, même si je n’avais pas fini la fabrication de toute les guirlandes, il était temps de déménager dans le local et de commencer le montage. J’ai placé les cartons avec les guirlandes dans des boîtes, rassemblé tout mon matériel de fabrication, et tout ce dont j’avais besoin pour la mise en espace de mon travail à l’Université. Après avoir passé tout ce temps de préparation pour l’examen de synthèse plutôt recluse, sortir de chez moi avec tout cet attirail a été à la fois un moment de vulnérabilité, d’inquiétude à savoir si tout ce que je m’étais imaginé allait bien se concrétiser, mais aussi un moment de réjouissance, car j’avais invité, en plus de mon jury, plusieurs proches et collègues à venir voir mon projet.</p>
+			<p>Avant leur arrivée, il fallait commencer par investir l’espace et installer mon projet. J’avais, à nouveau assez tôt, imaginé que ce serait idéal d’avoir un tapis sous le mobile, créant ainsi une zone sécuritaire où peuvent reposer les guirlandes plus longues. Mais dans la frénésie des étapes de la fabrication, j’ai eu l’esprit occupé par tant d’autres éléments que j’en ai oublié mon tapis pourtant si important pour la mise en espace du mobile. J’imaginais, grâce au tapis, une salle plus agréable, plus chaleureuse et presque intime. Je voulais qu’il soit doux et poilu pour mettre l’emphase sur la tactilité, et si possible, molletonné, en pensant à la sensation que ça apporterait de marcher dessus. Nous avons tant l’habitude de sols durs, que lorsque nous arrivons de façon inattendue sur une surface molle, nous avons souvent l’automatisme de ralentir ou d’augmenter notre sensibilité, comme une sorte de précaution. Heureusement pour le projet, je ne suis pas la seule à être à la recherche de douceur et de mollesse dans mon environnement. J’ai trouvé toutes sortes de tapis et de tuiles de mousse, pelucheux et dans plusieurs variétés de couleurs. Comme je m’y étais pris bien trop tard, j’ai dû me résigner à utiliser le compte <em>Amazon Prime</em> d’une amie pour réussir à obtenir un tapis à bas prix et avec une livraison presque immédiate. Je me répugne à l’idée d’acheter quoi que ce soit sur cette plateforme, mais j’ai décidé d’enfreindre à mes principes, comme nous sommes tou·te·s parfois contraint·e·s à le faire, pour pouvoir présenter mon travail dans le juste environnement. Cela m’a non seulement permis d’obtenir rapidement un tapis «&nbsp;achetable&nbsp;» en termes de budget, mais il nous a surtout apporté beaucoup de plaisir&nbsp;: les personnes qui sont venues, et moi la première, nous avons beaucoup apprécié marcher, ou même, glisser dessus en chaussettes. Durant certains moments plus calmes, il y a eu des petits groupes assis ou même couchés sur le tapis. Il a ainsi créé un lieu de détente, de confort et de partage, un havre de repos pour plusieurs universitaires épuisé·e·s, dont je faisais aussi partie. </p>
+			<p>J’avais placé le tapis à peu près au centre de la pièce, en dessous du projecteur installé au plafond. Ça me permettait ensuite d’accrocher un mousqueton sur la structure du projecteur, et d’y passer le fil de maçon qui servirait à suspendre le mobile. L’utilisation du mousqueton facilitait l’ajustement de la hauteur du mobile, un atout pendant l’installation, mais aussi pendant la démonstration. Je voulais pouvoir le baisser pour des enfants par exemple. Lorsque j’ai suspendu le cerceau pour la première fois, tout était comme je l’avais imaginé. L’utilisation des trois points d’attache, reliés par des fils équidistants, faisait flotter le grand cercle de façon parallèle au sol. Avec l’aide de ma collègue Cassandre, j’ai ensuite commencé à déballer chaque guirlande et à les accrocher, une à une, sur les anneaux prévus dans la structure. Des crochets vides signalaient les années sans acquisition de techniques mixtes. Comme le cordage étant un peu mobile sur le tuyau, nous avons remarqué que nous pouvions glisser légèrement les anneaux, d’abord orientés vers le sol, en direction du côté du cerceau, ce qui facilitait beaucoup la délicate manipulation des tous petits crochets. Malgré nos soins, les crochets, eux aussi, n’étaient pas de très bonne qualité. Il y a en a même un qui m’a brisé entre les mains. Puisque j’avais tout mon matériel, je l’ai simplement remplacé par un nouveau crochet plus tard dans la soirée. Comme d’autres crochets ne s’ouvraient que très mal, nous avons trouvé la solution alternative d’entrouvrir les petits anneaux à l’aide de pinces le temps d’y enfiler le crochet. </p>
+			<p>Alors que nous progressions dans l’accrochage année par année, le cerceau s’est mis à pencher du côté où se trouvaient les pompons. J’ai réalisé à ce moment-là que je n’avais pas pensé au rôle qu’allait jouer la gravité dans cette installation. C’était pourtant loin d’être tout. J’avais complété environ le deux tiers des guirlandes, pour les années 1964 à 2001, au moment du montage. Ensuite, pendant les moments de calme, j’ai repris la fabrication dans le sens chronologique inverse, de 2024 jusqu’à 2011. Ces années sont toutefois plutôt «&nbsp;légères&nbsp;», le musée effectue de moins en moins d’acquisition dans les dernières années. À l’inverse, le très grand nombre d’acquisition durant les années 90 pesait lourd dans la balance. Ainsi, le cerceau en pex – une matière solide mais tout de même malléable si on la manipule – a progressivement modulé sa forme selon la force de gravité qui s’appliquait sur les données, c’est-à-dire les guirlandes de pompons. Le mercredi après-midi, j’avais justement relevé la structure de quelques centimètres pour accommoder une amie plutôt grande en taille qui s’était placée en-dessous. Le groupe qui s’est ensuite installé plus longuement sur le tapis a alors ressenti une certaine inquiétude, constatant effectivement que la forme semblait évoluer sous leurs yeux. On se demandait ce qui arriverait si la courbe qui s’était formée dans le cerceau devenait trop forte. Puisque j’ai décidé de laisser le mobile accroché durant le mois de juin pour accommoder quelques visites supplémentaires, j’en ai conclu qu’il était important de baisser la hauteur, quand on n’est pas dans la salle, pour préserver la structure.</p>
+			<p>Même s’il reste encore bien des anecdotes et des réflexions que j’aurais aimé partager, je voudrais conclure à propos des nombreuses contributions des personnes qui sont venues dans l’espace. Quand j’ai terminé le montage, j’ai réalisé que chaque personne qui entrait dans la salle semblait aussi entrer, métaphoriquement, dans ma recherche. Au quotidien, ma recherche est chaotiquement répartie entre divers coins de mon cerveau et différentes plateformes et dépôts numériques. Dans cette salle, c’est comme si j’avais matérialisé suffisamment d’éléments pour que ma recherche soit incarnée dans l’espace et que les personnes présentes pouvaient désormais la voir et l’explorer. Même plus que ça, y participer! Chaque question, chaque conversion, en plus des photos et des vidéos que j’ai reçues dans les jours qui ont suivi, ont nourri mon travail et fait avancer ma réflexion. J’avais déjà l’hypothèse que la participation aurait une dimension essentielle à mes propositions en recherche-création, puisque je fabrique des objets tactiles, faits pour être manipulés. Cependant, cet événement – que j’ai nommé une «&nbsp;démonstration&nbsp;», pour employer un terme moins formel que «&nbsp;exposition&nbsp;» tout en faisant un clin d’œil à la tradition des présentations de logiciels ou de nouveaux bidules technologiques qu’on nomme des <em>démos</em> en informatique – m’a confirmé que la participation était vraiment nécessaire, pour que je puisse parler de mon travail et ainsi le repenser. J’ai aussi rédigé cette description, en tant qu’ajout au projet et à sa documentation, pour poursuivre les réflexions que je mène sur l’accessibilité. Plusieurs personnes ne pourront pas venir sur place, que ce soit dû à des contraintes de santé, de temps, de moyens ou tout simplement parce qu’iels en entendront parler plus tard. C’était donc indispensable, pour aller au bout de la démarche, de restituer l’expérience de la <em>Célébration de données molles</em> dans un format plus pérenne et plus accessible.</p>
+			<p>Pour terminer, je remercie toutes les personnes qui sont venues et celles qui m’ont soutenue dans la réalisation de ce projet. Je n’aurais aucun plaisir à travailler seule, et j’éprouve beaucoup de gratitude à être si bien entourée pour jouer avec des données et bricoler des bêtises, tout en traitant de sujets plutôt sérieux. J’espère donc que toute cette fantaisie mènera, dans quelques années, à l’obtention d’un doctorat en recherche-création.</p>
+			<p>&nbsp;</p>
+			<div class='footnotes-area'>
+				<hr />
+				<div class='footnote-line'><span class='md-fn-count'>1 Une note précise que ces divers éléments sont également accessibles sur le site web lenamk.site/doc <a name='dfref-footnote-1' href='#ref-footnote-1' title='back to document' class='reversefootnote'>↩</a></div>
+				<div class='footnote-line'><span class='md-fn-count'>2 Ce plaisir m’a d’ailleurs été rappelé par la présence d’un magnifique rideau de perles que l’on pouvait toucher dans l’exposition <em>The Catalogue of Speculative Translations, Act II: 	Fugitivities</em> d’Abigail E Celis et de Cosmo Whyte <a name='dfref-footnote-2' href='#ref-footnote-2' title='back to document' class='reversefootnote'>↩</a></div>
+				<div class='footnote-line'><span class='md-fn-count'>3 Un grand merci à <a href='https://sydneygui.wordpress.com/'>Sydney Guillemette</a> et à l’espace <a href='https://portailetudiant.uqam.ca/autochtones/niska/'>NISKA</a> à l’UQAM. <a name='dfref-footnote-3' href='#ref-footnote-3' title='back to document' class='reversefootnote'>↩</a></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
