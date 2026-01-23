@@ -8,6 +8,12 @@
     margin-right: auto;
 }
 
+@media (max-width: 1300px) {
+  nav {
+    display: none;
+  }
+}
+
 td {
     padding: 5%;
 }
@@ -25,12 +31,13 @@ audio {
 }
 
 nav {
-    padding-top: 10%;
+    margin-top: 10%;
     padding-left: 5%;
     position: fixed;
     top: 0;
     background-color: white;
     width: 15vw;
+    border-right: 1px lightgrey solid
 }
 
 nav > ul {

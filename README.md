@@ -2,15 +2,21 @@
 
 ![Installation view](https://upload.wikimedia.org/wikipedia/commons/b/b0/Soft_Data_Celebration_data_physicalization_by_Lena_MK_2.jpg)
 
+La *Célébration de données molles* est une matérialisation de données de la collection du Musée d'art contemporain de Montréal.
 
-## À Propos 
+[Lena MK](lenamk.site/bio), 2024
 
-- [Interface](./interface_demo/index.html)
+
+## Découvrir
+
+- [Interface de consultation](./interface_demo/index.html) (pas adapté pour la vue mobile)
 - [Audiodescription](./audiodescription)
 - [English description](./softDataCelebration)
 
 
 ## Visualisations expérimentales
+
+Ces visualisations sont faites pour être consultées sur un écran d'ordinateur, elles n'ont pas été adaptées pour la vue mobile.
 
 - [*Ribon curtain*](./exSynth/index.html)
 - Techniques mixtes
