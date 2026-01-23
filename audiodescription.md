@@ -1,8 +1,6 @@
-# *Célébration de données molles*
 
-Texte écrit et lu par Lena MK
 
-<nav>
+    <nav>
 		<ul>
 			<li><a href="#ecouter">Contrôles audio</a></li>
 			<br>
@@ -14,6 +12,14 @@ Texte écrit et lu par Lena MK
 			<li><a href="#partie4">Partie 4</a> </li>
 		</ul>
 	</nav>
+
+
+
+
+
+
+Texte écrit et lu par Lena MK
+
 	<div class='typora-export-content'>
 		<div id='write' class=''>
 			<h1 id='célébration-de-données-molles'><em>Célébration de données molles</em></h1>
@@ -74,6 +80,8 @@ Texte écrit et lu par Lena MK
 					</tr>
 				</table>
 			</figure>
+
+
 
 
 *Transcription*
