@@ -1,16 +1,20 @@
 # Célébration de données molles | Soft data celebration
 Soft data celebration is a data physicalization of the Montreal Contemporary Art Museum's Collection.
 
-## Visualisations
+## À Propos 
+
+- [Interface](./interface_demo/index.html)
+- [Audiodescription](./audiodescription)
+- [English description (short)](./softDataCelebration)
+
+
+## Visualisations expérimentales
 
 - [*ribon curtain*](./exSynth/index.html)
 - techniques mixtes
   - [ribon curtain](./MAC-techniquesMixtes/index.html) 
   - prévisualisation avec couleurs
   - [interface de fabrication](./making_donneesMolles/index.html), pour visualisation et légende par année. Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
-  - interface de démonstration
-
-
 
 
 ## Répertoire des données utilisées
