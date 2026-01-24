@@ -4,12 +4,12 @@
 
 La *Célébration de données molles* est une matérialisation de données de la collection du Musée d'art contemporain de Montréal.
 
-[Lena MK](lenamk.site/bio), 2024
+[Lena MK](https://lenamk.site/bio), 2024
 
 
 ## Découvrir
 
-- [Interface de consultation](./interface_demo/index.html) (pas adapté pour la vue mobile)
+- [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
 - [Audiodescription](./audiodescription)
 - [English description](./softDataCelebration)
 
@@ -20,8 +20,7 @@ Ces visualisations sont faites pour être consultées sur un écran d'ordinateur
 
 - [*Ribon curtain*](./exSynth/index.html)
 - Techniques mixtes
-  - [Ribon curtain](./MAC-techniquesMixtes/index.html) 
-  - Prévisualisation avec couleurs
+  - [Ribon curtain](./MAC-techniquesMixtes/index.html)
   - [Interface de fabrication](./making_donneesMolles/index.html), pour visualisation et légende par année. Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
 
 
