@@ -1,5 +1,7 @@
 # Soft data celebration: dancing between algorithms and craft
 
+Submitted to [Alpaca 2025](https://2025.algorithmicpattern.org/) (received 3 reviews, the proposal was not accepted)
+
 [Lena MK](https://orcid.org/0000-0001-6280-6657)
 Université de Montréal, Maison MONA
 lenamk.site

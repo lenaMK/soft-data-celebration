@@ -1,17 +1,31 @@
+---
+title: Célébration de données molles
+description: À Propos
+author: Lena MK
 
+---
 
 ![Installation view](https://upload.wikimedia.org/wikipedia/commons/b/b0/Soft_Data_Celebration_data_physicalization_by_Lena_MK_2.jpg)
 
 La *Célébration de données molles* est une matérialisation de données de la collection du Musée d'art contemporain de Montréal.
 
-[Lena MK](https://lenamk.site/bio), 2024
+[Lena MK](https://lenamk.site/bio), 2025
 
 
-## Découvrir
+
+## Découvrir l'installation et les données: espace numérique
 
 - [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
-- [Audiodescription](./audiodescription)
+- [Audiodescription (avec transcription)](./audiodescription)
 - [English description](./softDataCelebration)
+
+
+## Recherche et documentation
+
+- [Submission to CSDH2026 call for papers](./CSDH-2026.md)
+- [Étapes de l'examen de synthèse](http://lenamk.site/doc/#examen-de-synth%C3%A8se-mai-2025) et  [Documentation photographique participative (Citer le projet en cas de réutilisation/diffusion des photographies svp)](https://u.pcloud.link/publink/show?code=kZSGxe5ZrsmgqJYI2gkRvTaHkVq9MY4FUfEX), mai-juin 2026
+
+**Comment citer**: Lena MK, *Célébration de données molles* ou *Soft data celebration* [selon la langue], 2025, installation et physicalisation de données.
 
 
 ## Visualisations expérimentales
@@ -33,3 +47,9 @@ Ces visualisations sont faites pour être consultées sur un écran d'ordinateur
 - [Index des origines](index_origines.json) (version longue, contient chaque œuvre)
 - [Index des artistes et leurs origines associées](./data/index_origines_artistes.json)
 
+
+
+
+---
+
+<small>Date de dernière mise à jour: Janvier 2026</small>
