@@ -1,6 +1,6 @@
 ---
 title: Célébration de données molles
-description: À Propos
+description: Lena MK, 2025
 author: Lena MK
 
 ---
@@ -11,12 +11,13 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 [Lena MK](https://lenamk.site/bio), 2025
 
-
+**Février 2026**: Exposition à la bibliothèque de mathématiques et informatique de l'Université de Montréal tout le mois, et [atelier de bricolage](https://calendrier.umontreal.ca/activite/atelier-de-bricolage-de-donnees) le 4 février 2026.
+![Carton d'invitation au vernissage du 3 février 2026, 17h à 19h](./files/carton-invitation-lena.png)
 
 ## Découvrir l'installation et les données: espace numérique
 
 - [Légende de l'installation](./interface_demo/legende.html)
-- [Exploration par année](./interface_demo/index.html?year=2020) Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
+- [Exploration par année](./interface_demo/index.html?year=2020)<br> Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
 - [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
 - [Audiodescription (avec transcription)](./audiodescription)
 - [English description](./softDataCelebration)
@@ -43,6 +44,8 @@ Ces visualisations sont faites pour être consultées sur un écran d'ordinateur
 
 
 ## Répertoire des données utilisées
+
+Consulter les fichiers `.json` utilisés dans le navigateur:
 
 - Données du MAC (téchargement de la version le 20 mars 2025). Source: [donnéesQuébec](https://www.donneesquebec.ca/recherche/organization/macm)
   - [Artistes](./data/artistes-mac.json)
