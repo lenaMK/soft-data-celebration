@@ -15,6 +15,8 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 ## Découvrir l'installation et les données: espace numérique
 
+- [Légende de l'installation](./interface_demo/legende.html)
+- [Exploration par année](./interface_demo/index.html?year=2020) Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
 - [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
 - [Audiodescription (avec transcription)](./audiodescription)
 - [English description](./softDataCelebration)
@@ -32,10 +34,12 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 Ces visualisations sont faites pour être consultées sur un écran d'ordinateur, elles n'ont pas été adaptées pour la vue mobile.
 
+**Collection complète**
 - [*Ribon curtain*](./exSynth/index.html)
-- Techniques mixtes
-  - [Ribon curtain](./MAC-techniquesMixtes/index.html)
-  - [Interface de fabrication](./making_donneesMolles/index.html), pour visualisation et légende par année. Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
+
+**Techniques mixtes**
+- [Ribon curtain](./MAC-techniquesMixtes/index.html)
+- [Interface de fabrication](./making_donneesMolles/index.html), pour visualisation et légende par année. Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
 
 
 ## Répertoire des données utilisées

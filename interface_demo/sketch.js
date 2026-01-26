@@ -55,44 +55,9 @@ function setup(){
         return b.dateAcquisition - a.dateAcquisition;
     })
 
-
     minYear = Math.min(...art.map(item => item.dateAcquisition))
     maxYear = Math.max(...art.map(item => item.dateAcquisition))
  
-
-    /*
-    INFO ABOUT DATA
-    console.log(art)
-    
-
-    var artists_distinct = new Set()
-    art.forEach(artwork => {
-        artwork.artistes.forEach(artist => {
-            artists_distinct.add(artist.id)
-        })
-    })
-
-    console.log(artists_distinct) //207 artistes
-
-    var origines_distincts = new Set()
-
-    for (const artist of artists_distinct) {
-
-        var test_artisteMAC = artists_origines.find(d => d.id == artist)
-
-        if (test_artisteMAC){
-           
-
-            test_artisteMAC.origines.forEach(o => {
-                origines_distincts.add(o)
-                
-            })
-        }
-        
-    }
-
-    console.log("origines distinctes: ", origines_distincts) // 30 origines différentes
-    */
 
     var guirlandes = 0
     for (var annee = minYear; annee <= maxYear; annee++){
@@ -127,28 +92,18 @@ function windowResized() {
     resizeCanvas(windowWidth, maxHeight);
 }
 
-/*
-function mouseClicked() {
-    if (loopDraw){
-        noLoop()
-        loopDraw = false
-    }
-    else {
-        loop()
-        loopDraw = true
-    }
-}*/
 
 function drawLegendeVerticale(width, data) {
      
 
-    translate(windowWidth/3*2, 100)
+    translate(windowWidth/3*2, 120)
     console.log(data)
+    textSize(30); 
+    text("Légende", -20, 0)
 
+    for (let step = 1; step < data.length +1; step++){
 
-    for (let step = 0; step < data.length; step++){
-
-        var current = data[step]
+        var current = data[step-1]
 
         var posX = 0
         var posY = step * 80
@@ -158,26 +113,23 @@ function drawLegendeVerticale(width, data) {
 
         fill([0, 0, 0, 0.8])
             
-        textSize(24); 
+        textSize(21); 
         text( current.origine, posX + 30, posY)
 
     }
 
+    stroke('black')
+    strokeWeight(1)
+
+    line(-60, -20, -60, posY+30)
 
 }
 
 
 
 function drawYear(year){
-    stroke('black')
-    strokeWeight(1)
-
+    
     console.log(year)
-
-    line(250, mouseY-22, windowWidth/2, mouseY-22)
-    line(250, mouseY+22, windowWidth/2, mouseY+22)
-
-
 
     var currentOrigines = new Set()
 
@@ -187,8 +139,10 @@ function drawYear(year){
     var yearData = art.filter(d => d.dateAcquisition == year)
     console.log(yearData)
 
-    text(`Année ${year} (${yearData.length})`, 150, 50 )
-
+    text(`Année ${year}`, 150, 50 )
+    noStroke()
+    textSize(21)
+    text(`Nombre d'œuvres acquises ${yearData.length}`, 150, 100)
   
 
     var count = 0
@@ -200,8 +154,8 @@ function drawYear(year){
 
     yearData.forEach(artwork => {
 
-        var posX = windowWidth/4
-        var posY = 150+ count*50
+        var posX = 200
+        var posY = 220+ count*50
         textSize(21)
         
         fill(0, 0, 0, 0.8)

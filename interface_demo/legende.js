@@ -17,9 +17,9 @@ var minYear, maxYear
 
 
 var marginSides = 150
-var marginTop = 100
+var marginTop = 150
 var curtainWidth, curtainStep, curtainElement
-var textHeight, maxHeight
+var textHeight
 
 var specYear, index_tm
 
@@ -46,8 +46,6 @@ function setup(){
     /*origines.sort((a, b) => {
         return b.origine - a.origine;
     })*/
-
-    maxHeight = origines.length * 50 + marginTop + 100
     
     console.log("origines", origines)
 
@@ -68,15 +66,11 @@ function drawLegende() {
     noStroke()
     background("lightgrey");
 
-    
-    
-    
     translate(marginSides, marginTop)
 
     for (let step = 0; step < origines.length; step++){
-
+        
         var current = origines[step]
-
         var posX, posY 
 
         if (step < 15){
@@ -106,7 +100,15 @@ function drawLegende() {
 }
 
 function draw (){
-    drawLegende()
 
+    
+    drawLegende()
+    textSize(42)
+    text("Légende", marginSides/2- 50, windowHeight/100)
+
+    textSize(18)
+    text("Le chiffre entre parenthèse indique le nombre de pompons et donc le nombre d'œuvres dans laquelle cette origine est représentée.", marginSides/2-50, windowHeight/100+50)
+
+    text("* Il reste des petites erreurs dans les données, comme les concaténation de citoyennetés autochtones. Je les ai ajustées pendant la fabrication.", marginSides/2-50, windowHeight/10*8)
 
 }
