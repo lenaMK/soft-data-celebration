@@ -41,8 +41,6 @@ function setup(){
 
     textAlign(LEFT, CENTER)
     
-
-    
     // sans séries, uniquement les techniques mixtes
 
     art = Object.values(art_import).filter(d => d.oeuvrePrincipale == null && d.categorie == "Techniques mixtes")
@@ -50,38 +48,28 @@ function setup(){
     artists_origines = Object.values(artists_origines_import)
     origines = Object.values(origines_import)
 
-    console.log("origines", origines)
-    art.sort((a, b) => {
-        return b.dateAcquisition - a.dateAcquisition;
-    })
 
-    minYear = Math.min(...art.map(item => item.dateAcquisition))
-    maxYear = Math.max(...art.map(item => item.dateAcquisition))
+    var year = document.getElementById("year")
+    specYear = year.value
+    console.log("year", specYear)
+
+    var currentYear = art.filter(d => d.dateAcquisition == specYear)
+    minYear = Math.min(...currentYear.map(item => item.dateAcquisition))
+    maxYear = Math.max(...currentYear.map(item => item.dateAcquisition))
  
-
-    var guirlandes = 0
-    for (var annee = minYear; annee <= maxYear; annee++){
-        if (art.filter(d => d.dateAcquisition == annee).length != 0)
-            guirlandes++
-    }
-
-    console.log("nb guirlandes: ", guirlandes)
 
     textSize(fontsize); 
     textFont(font) 
 
-    curtainWidth = windowWidth-marginSides*2
-    curtainElementWidth = curtainWidth/(maxYear-minYear)   
 
     textHeight = textAscent() + textDescent()
-    maxHeight = art.filter(d => d.dateAcquisition == 1992).length * 50 + 200
+    maxHeight = currentYear.length * 50 + 200
+
+    if(maxHeight < windowHeight)
+        maxHeight = windowHeight
 
 
-    params = getURLParams();
-    specYear = params.year
-    console.log(specYear)
-
-    createCanvas(windowWidth, maxHeight+marginTop*2);
+    createCanvas(windowWidth, maxHeight);
    
     noLoop();
     
@@ -90,38 +78,46 @@ function setup(){
 
 function windowResized() {
     resizeCanvas(windowWidth, maxHeight);
+    setup()
+    draw()
+}
+
+function mouseClicked(){
+    setup()
+    draw()
 }
 
 
 function drawLegendeVerticale(width, data) {
      
+    push()
+        translate(windowWidth/3*2, 120)
+        console.log(data)
+        textSize(30); 
+        text("Légende", -20, 0)
 
-    translate(windowWidth/3*2, 120)
-    console.log(data)
-    textSize(30); 
-    text("Légende", -20, 0)
+        for (let step = 1; step < data.length +1; step++){
 
-    for (let step = 1; step < data.length +1; step++){
+            var current = data[step-1]
 
-        var current = data[step-1]
+            var posX = 0
+            var posY = step * 80
 
-        var posX = 0
-        var posY = step * 80
+            fill(current.couleur)
+            circle(posX, posY, 25)
 
-        fill(current.couleur)
-        circle(posX, posY, 25)
+            fill([0, 0, 0, 0.8])
+                
+            textSize(21); 
+            text( current.origine, posX + 30, posY)
 
-        fill([0, 0, 0, 0.8])
-            
-        textSize(21); 
-        text( current.origine, posX + 30, posY)
+        }
 
-    }
+        stroke('black')
+        strokeWeight(1)
 
-    stroke('black')
-    strokeWeight(1)
-
-    line(-60, -20, -60, posY+30)
+        line(-60, -20, -60, posY+30)
+    pop()
 
 }
 
@@ -132,7 +128,7 @@ function drawYear(year){
     console.log(year)
 
     var currentOrigines = new Set()
-
+    fill('black')
     translate(marginSides, marginTop)
     textSize(48)
 
@@ -217,72 +213,12 @@ function drawYear(year){
 }
 
 
-function drawAll(){
-
-    circleSize=12
-    
-    
-    translate(marginSides, marginTop)
-
-    var totalCount = 0
-    for (let step = 0; step <=(maxYear-minYear); step++){
-         noStroke()
-        var yearData = art.filter(d => d.dateAcquisition == (minYear+step))
-
-        var count = 0
-        yearData.forEach(artwork => {
-            //console.log("artwork")
-
-            var posX = step*curtainElementWidth
-            var posY = count*(textHeight)
-
-            //console.log(artwork.artistes)
-            // for each artist
-            
-            var countOs = 0
-            artwork.artistes.forEach(artiste => {
-                
-                var origines_renseignees = artists_origines.find(d => d.id == artiste.id)
-                
-                if (origines_renseignees){
-                    origines_renseignees.origines.forEach(o => {
-
-                        var current = origines.find(d => d.origine == o)
-                        
-                        if (current)
-                            fill(current.couleur)
-                        else
-                            fill([0, 100, 100])
-                        circle(posX+countOs*circleSize, posY, circleSize)
-
-                        countOs ++;
-
-                    })
-                }
-                else{
-                    fill([0, 100, 100])
-                    circle(posX+countOs*circleSize, posY, circleSize)
-                    countOs ++;
-                }             
-
-                totalCount += countOs
-            })
-            count ++
-
-        })
-        
-    }
-    console.log("nb pompons", totalCount)
-}
-
 function draw() {
     console.log("drawing")
    
     background([0, 0, 96]);
 
-    if (specYear)
-        drawYear(specYear)
-    else
-        drawAll()
+    drawYear(specYear)
+    
 
 }

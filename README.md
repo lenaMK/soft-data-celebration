@@ -17,7 +17,7 @@ La *Célébration de données molles* est une matérialisation de données de la
 ## Découvrir l'installation et les données: espace numérique
 
 - [Légende de l'installation](./interface_demo/legende.html)
-- [Exploration par année](./interface_demo/index.html?year=2020)<br> Ajouter l’année voulue dans les paramètres de l’URL ex: `?year=2020`
+- [Exploration par année](./interface_demo/index.html)
 - [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
 - [Audiodescription (avec transcription)](./audiodescription)
 - [English description](./softDataCelebration)

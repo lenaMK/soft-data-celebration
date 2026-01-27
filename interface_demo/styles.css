@@ -1,0 +1,21 @@
+
+
+#selector {
+  background-color: #f5f5f5;
+  font-family: BagnardRegular;
+  font-size: 18px;
+}
+
+select{
+  position: fixed;
+  right: 120px;
+  top: 50px;
+  width: 80px
+}
+
+#label{
+  position: fixed;
+  right: 220px;
+  top: 47px
+
+}
