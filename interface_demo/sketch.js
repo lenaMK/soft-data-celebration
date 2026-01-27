@@ -14,7 +14,7 @@ var backgroundColor, fontColor, darkmode, button
 
 var circleSize = 25
 
-var minYear, maxYear
+var minYear, maxYear, yearData
 var fontsize = 15
 var font = 'BagnardRegular'
 
@@ -28,6 +28,7 @@ var specYear, index_tm
 
 
 function preload(){
+    //get data files
      art_import = loadJSON("../data/oeuvres-mac.json")
      artists_import = loadJSON("../data/artistes-mac.json")
      artists_origines_import = loadJSON("../data/index_origines_artistes.json")
@@ -42,14 +43,14 @@ function setup(){
     textAlign(LEFT, CENTER)
     
     // sans séries, uniquement les techniques mixtes
-
     art = Object.values(art_import).filter(d => d.oeuvrePrincipale == null && d.categorie == "Techniques mixtes")
     artists = Object.values(artists_import)
     artists_origines = Object.values(artists_origines_import)
     origines = Object.values(origines_import)
 
-
+    // année sélectionnée
     var year = document.getElementById("year")
+    
     specYear = year.value
     console.log("year", specYear)
 
@@ -63,7 +64,7 @@ function setup(){
 
 
     textHeight = textAscent() + textDescent()
-    maxHeight = currentYear.length * 50 + 200
+    maxHeight = currentYear.length * 50 + 400
 
     if(maxHeight < windowHeight)
         maxHeight = windowHeight
@@ -83,12 +84,30 @@ function windowResized() {
 }
 
 function mouseClicked(){
-    setup()
-    draw()
+    
+    if (mouseX == 0 && mouseY == 0){
+        console.log("reload for year update")
+        setup()
+        draw()
+    }
+    else if(marginSides < mouseX && mouseX< windowWidth/3*2-60 && mouseY > marginTop+200){
+        console.log("within artworks section")
+        var artworkNb = Math.floor((mouseY-(marginTop+200))/50)
+        console.log(yearData[artworkNb])
+        
+        
+        window.open(`https://macrepertoire.macm.org/oeuvre/${yearData[artworkNb].id}`,'_blank')
+
+
+    }
+    else {
+        console.log("mouse clicked elsewhere")
+    }
+    
 }
 
 
-function drawLegendeVerticale(width, data) {
+function drawLegendeVerticale(data) {
      
     push()
         translate(windowWidth/3*2, 120)
@@ -132,20 +151,20 @@ function drawYear(year){
     translate(marginSides, marginTop)
     textSize(48)
 
-    var yearData = art.filter(d => d.dateAcquisition == year)
+    yearData = art.filter(d => d.dateAcquisition == year)
     console.log(yearData)
 
     text(`Année ${year}`, 150, 50 )
     noStroke()
     textSize(21)
-    text(`Nombre d'œuvres acquises ${yearData.length}`, 150, 100)
+    text(`Nombre d'œuvres de techniques mixtes acquises ${yearData.length}`, 150, 100)
   
 
     var count = 0
 
     if (yearData.length == 0){
         textSize(30)
-        text(`Pas d'acquisition de techniques mixtes`, 150, 120 )
+        text(`Pas d'acquisition de techniques mixtes`, 150, 220 )
     }
 
     yearData.forEach(artwork => {
@@ -163,11 +182,12 @@ function drawYear(year){
         var countOs = 0
         artwork.artistes.forEach(artiste => {
 
+            // quand il y a pleusieurs artistes pour une œuvre
             if (artwork.artistes.length > 1){
                 console.log(artwork.artistes.length)
                 if (artwork.artistes.indexOf(artiste) == 1){
                     count++
-                    posY = 150+ count*50
+                    posY = 220+ count*50
                 }
                     
 
@@ -208,7 +228,9 @@ function drawYear(year){
     })
     
     console.log(currentOrigines)
-    drawLegendeVerticale(100, Array.from(currentOrigines))
+
+    if(yearData.length != 0)
+    drawLegendeVerticale(Array.from(currentOrigines))
     
 }
 
