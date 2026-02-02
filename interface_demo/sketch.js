@@ -85,12 +85,7 @@ function windowResized() {
 
 function mouseClicked(){
     
-    if (mouseX == 0 && mouseY == 0){
-        console.log("reload for year update")
-        setup()
-        draw()
-    }
-    else if(marginSides < mouseX && mouseX< windowWidth/3*2-60 && mouseY > marginTop+200){
+    if(marginSides < mouseX && mouseX< windowWidth/3*2-60 && mouseY > marginTop+200){
         console.log("within artworks section")
         var artworkNb = Math.floor((mouseY-(marginTop+200))/50)
         console.log(yearData[artworkNb])
@@ -101,7 +96,10 @@ function mouseClicked(){
 
     }
     else {
-        console.log("mouse clicked elsewhere")
+        
+        console.log("reload for year update")
+        setup()
+        draw()
     }
     
 }

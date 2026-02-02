@@ -75,12 +75,12 @@ function drawLegende() {
 
         if (step < 15){
             posX = 50
-            posY = step*50+marginTop
+            posY = step*60+marginTop
             
         }            
         else {
             posX = 500
-            posY = (step-15)*50+marginTop
+            posY = (step-15)*60+marginTop
         }
         
 
@@ -90,7 +90,7 @@ function drawLegende() {
 
         fill([0, 0, 0, 0.8])
             
-        textSize(24); 
+        textSize(28); 
         text( current.origine, posX + 30, posY)
         text( `(`+current.nb_oeuvres+`)`, posX + 40 + textWidth(current.origine), posY)
 
@@ -103,12 +103,14 @@ function draw (){
 
     
     drawLegende()
-    textSize(42)
+    textSize(60)
     text("Légende", marginSides/2- 50, windowHeight/100)
 
-    textSize(18)
-    text("Le chiffre entre parenthèse indique le nombre de pompons et donc le nombre d'œuvres dans laquelle cette origine est représentée.", marginSides/2-50, windowHeight/100+50)
+    var textWidth = 390
+    textWrap(WORD);
+    textSize(24)
+    text("Le chiffre entre parenthèse indique le nombre de pompons et donc le nombre d'œuvres dans laquelle cette origine est représentée.", windowWidth/2 + 100, windowHeight-560, textWidth)
 
-    text("* Il reste des petites erreurs dans les données, comme les concaténation de citoyennetés autochtones. Je les ai ajustées pendant la fabrication.", marginSides/2-50, windowHeight/10*8)
+    text("* Il reste des petites erreurs dans les données, comme les concaténations de citoyennetés autochtones. Je les ai ajustées pendant la fabrication.", windowWidth/2 + 100, windowHeight-360, textWidth)
 
 }
