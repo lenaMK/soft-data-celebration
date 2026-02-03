@@ -11,24 +11,27 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 [Lena MK](https://lenamk.site/bio), 2025
 
-**Février 2026**: Exposition à la bibliothèque de mathématiques et informatique de l'Université de Montréal tout le mois, et [atelier de bricolage](https://calendrier.umontreal.ca/activite/atelier-de-bricolage-de-donnees) le 4 février 2026.
-![Carton d'invitation au vernissage du 3 février 2026, 17h à 19h](./files/carton-invitation-lena.png)
-
-- [Affiche présentée dans l'espace d'exposition](./files/afficheExpo_2026.pdf)
-- [Légende et description courte](./files/legendePresentationExpo_2026.pdf)
-
-Un énorme merci à l'équipe de la bibliothèque de mathématique et informatique et des bibliothèques de l'UdeM pour leur soutien et leur collaboration 🩵
-
-
 ## À propos des *données molles*
 
 - [Audiodescription (avec transcription)](./audiodescription)
 - [English description](./softDataCelebration)
 
-## Découvrir l'installation et les données: espace numérique
+### Découvrir l'installation et les données: espace numérique
 
 - [Exploration par année](./interface_demo/index.html)
 - [Notebook pour explorer les données](https://observablehq.com/@lenamk/soft-data-demo) (peu adapté pour la vue mobile)
+
+
+### Exposition | février 2026
+
+Exposition à la bibliothèque de mathématiques et informatique de l'Université de Montréal tout le mois, et [atelier de bricolage](https://calendrier.umontreal.ca/activite/atelier-de-bricolage-de-donnees) le 4 février 2026.
+![Carton d'invitation au vernissage du 3 février 2026, 17h à 19h](./files/carton-invitation-lena.png)
+
+- [Affiche présentée dans l'espace d'exposition](./files/affiche.png)
+- [Légende](./files/legende.png)
+
+Un énorme merci à l'équipe de la bibliothèque de mathématique et informatique et des bibliothèques de l'UdeM pour leur soutien et leur collaboration 🩵
+
 
 
 ## Recherche et documentation
