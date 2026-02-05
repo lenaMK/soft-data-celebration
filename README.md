@@ -11,6 +11,14 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 [Lena MK](https://lenamk.site/bio), 2025
 
+---
+
+**Comment citer**: Lena MK, *Célébration de données molles* ou *Soft data celebration* [selon la langue], 2025, installation et physicalisation de données.
+
+---
+
+
+
 ## À propos des *données molles*
 
 - [Audiodescription (avec transcription)](./audiodescription)
@@ -24,26 +32,29 @@ La *Célébration de données molles* est une matérialisation de données de la
 
 ### Exposition | février 2026
 
-Exposition à la bibliothèque de mathématiques et informatique de l'Université de Montréal tout le mois, et [atelier de bricolage](https://calendrier.umontreal.ca/activite/atelier-de-bricolage-de-donnees) le 4 février 2026.
-![Carton d'invitation au vernissage du 3 février 2026, 17h à 19h](./files/carton-invitation-lena.png)
+Exposition à la bibliothèque de mathématiques et informatique de l'Université de Montréal du 3 au 28 février, et [atelier de bricolage](https://calendrier.umontreal.ca/activite/atelier-de-bricolage-de-donnees) le 4 février 2026.
 
 - [Affiche présentée dans l'espace d'exposition](./files/affiche.png)
-- [Légende](./files/legende.png)
+- [Légende des couleurs des pompons](./files/legende.png)
+- [Photographies de l'atelier de bricolage de données](https://u.pcloud.link/publink/show?code=kZzKGK5Z5bMQoe5oEGjQNQwVxkKaQznBeXH7), 4 février 2026. Crédits photo: Amélie Philibert, Université de Montréal
 
-Un énorme merci à l'équipe de la bibliothèque de mathématique et informatique et des bibliothèques de l'UdeM pour leur soutien et leur collaboration 🩵
+<img src="./files/montageExpo.gif" alt="Gif du montage de l'installation" style="zoom:15%;" />
+
+*Un énorme merci à l'équipe de la bibliothèque de mathématique et informatique et des bibliothèques de l'UdeM pour leur soutien et leur collaboration* 🩵
 
 
 
 ## Recherche et documentation
 
-- [Étapes de l'examen de synthèse](http://lenamk.site/doc/#examen-de-synth%C3%A8se-mai-2025), l'installation a été réalisée en tant que partie pratique de l'examen et présentée pour la première fois en mai-juin 2025
-- [Documentation photographique participative](https://u.pcloud.link/publink/show?code=kZSGxe5ZrsmgqJYI2gkRvTaHkVq9MY4FUfEX), *Citer le projet en cas de réutilisation/diffusion des photographies svp*, mai-juin 2026
 - Documentation wiki
-    - [description sur wikidata](https://www.wikidata.org/wiki/Q134700898)
-    - [photographie sur wikimédia commons](https://commons.wikimedia.org/wiki/File:Soft_Data_Celebration_data_physicalization_by_Lena_MK_2.jpg)
-- [Submission to CSDH2026 call for papers](./CSDH-2026.md)
+    - [Description sur wikidata](https://www.wikidata.org/wiki/Q134700898)
+    - [Photographies sur wikimédia commons](https://commons.wikimedia.org/wiki/File:Soft_Data_Celebration_data_physicalization_by_Lena_MK_2.jpg)
+- Documentation photo, *Citer le projet en cas de réutilisation/diffusion des photographies svp*
+    - [Documentation photographique participative](https://u.pcloud.link/publink/show?code=kZSGxe5ZrsmgqJYI2gkRvTaHkVq9MY4FUfEX), mai-juin 2025
+    - [Photographies de l'expo et de l'atelier de bricolage de données](https://u.pcloud.link/publink/show?code=kZzKGK5Z5bMQoe5oEGjQNQwVxkKaQznBeXH7), bibliothèque de mathématiques et informatique de l'UdeM, 4 février 2026. Crédits photo: Amélie Philibert, Université de Montréal
+- [Étapes de l'examen de synthèse](http://lenamk.site/doc/#examen-de-synth%C3%A8se-mai-2025), l'installation a été réalisée en tant que partie pratique de l'examen et présentée pour la première fois en mai-juin 2025
+- [Submission to CSDH2026 call for papers](./CSDH-2026.md), janvier 2026
 
-**Comment citer**: Lena MK, *Célébration de données molles* ou *Soft data celebration* [selon la langue], 2025, installation et physicalisation de données.
 
 
 ## Visualisations expérimentales
